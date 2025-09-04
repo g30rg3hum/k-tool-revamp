@@ -2,10 +2,12 @@
 
 import Button from "@/components/ui/button";
 import { useState } from "react";
-import { ListIcon, XIcon } from "@phosphor-icons/react";
 import { mainPages } from "./header";
 import { AnimatePresence, motion } from "motion/react";
 import MobileLinkListItem from "./mobile-link-list-item";
+import { Menu, X } from "lucide-react";
+import clsx from "clsx";
+import { HORIZONTAL_PADDING } from "@/constants/styles";
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +15,7 @@ export default function MobileMenu() {
   return (
     <>
       <Button variant="neutral" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <ListIcon size={20} />
+        <Menu size={20} />
       </Button>
 
       <AnimatePresence>
@@ -26,10 +28,13 @@ export default function MobileMenu() {
               type: "tween",
               duration: 0.6,
             }}
-            className="fixed inset-0 bg-background z-50 flex flex-col px-9 overflow-y-auto"
+            className={clsx(
+              "fixed inset-0 bg-background z-50 flex flex-col overflow-y-auto",
+              HORIZONTAL_PADDING
+            )}
           >
             <motion.div whileHover={{ rotate: 2 }} className="ml-auto my-12">
-              <XIcon
+              <X
                 size={32}
                 className="cursor-pointer flex-shrink-0"
                 onClick={() => setIsMenuOpen(false)}

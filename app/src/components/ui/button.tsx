@@ -27,16 +27,20 @@ export default function Button({ variant, children, onClick, href }: Props) {
   const neutralStyles = "bg-neutral";
 
   const className = clsx(
-    "text-md w-max px-6 py-3 font-bold rounded-md",
+    "text-md w-max px-6 py-3 font-bold rounded-md flex items-center",
     variant === "primary" && primaryStyles,
     variant === "outline" && outlineStyles,
     variant === "neutral" && neutralStyles
   );
 
   const motionProps = {
-    whileHover: {
-      filter: variant === "neutral" ? "brightness(1.025)" : "brightness(1.4)",
-      cursor: "pointer",
+    whileHover: "whileHover",
+    initial: "initial",
+    variants: {
+      whileHover: {
+        filter: variant === "neutral" ? "brightness(1.025)" : "brightness(1.4)",
+        cursor: "pointer",
+      },
     },
     className,
   };

@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { Special_Gothic_Expanded_One, Fustat } from "next/font/google";
+import {
+  Special_Gothic_Expanded_One,
+  Fustat,
+  Montagu_Slab,
+} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/header/header";
 
-const specialGothicExpandedOne = Special_Gothic_Expanded_One({
-  variable: "--font-special-gothic-expanded-one",
+const logoFont = Special_Gothic_Expanded_One({
+  variable: "--font-logo",
   weight: "400",
+  display: "swap",
 });
 
-const fustat = Fustat({
-  variable: "--font-fustat",
+const sans = Fustat({
+  variable: "--font-sans",
+  subsets: ["latin"],
+});
+
+const serif = Montagu_Slab({
+  variable: "--font-serif",
   subsets: ["latin"],
 });
 
@@ -27,12 +37,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${specialGothicExpandedOne.variable} ${fustat.variable} antialiased`}
+        className={`${logoFont.variable} ${sans.variable} ${serif.variable} antialiased`}
       >
-        <div className="max-w-7xl mx-auto">
-          <Header />
-          <div className="px-9">{children}</div>
-        </div>
+        <Header />
+        {children}
       </body>
     </html>
   );

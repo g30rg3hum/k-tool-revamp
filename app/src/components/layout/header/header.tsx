@@ -1,6 +1,8 @@
+import clsx from "clsx";
 import Button from "../../ui/button";
 import DesktopLinkListItem from "./desktop-link-list-item";
 import MobileMenu from "./mobile-menu";
+import { CONTENT_STYLES } from "@/constants/styles";
 
 export const mainPages = [
   { href: "/", title: "Home" },
@@ -11,8 +13,13 @@ export const mainPages = [
 ];
 export default function Header() {
   return (
-    <header className="px-9 py-12 flex justify-between items-center">
-      <h1 className="font-special-gothic-expanded-one text-4xl">K-TOOL</h1>
+    <header
+      className={clsx(
+        "py-12 flex justify-between items-center",
+        CONTENT_STYLES
+      )}
+    >
+      <h1 className="font-logo text-4xl">K-TOOL</h1>
 
       {/* Desktop navigation */}
       <nav className="hidden lg:block">
