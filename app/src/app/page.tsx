@@ -9,11 +9,43 @@ import clsx from "clsx";
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import SectionLabel from "@/components/layout/section/section-label";
-import { Brain, Briefcase } from "lucide-react";
+import {
+  Brain,
+  Briefcase,
+  Clock,
+  Cpu,
+  Hourglass,
+  Ruler,
+  Star,
+  User,
+} from "lucide-react";
 import SectionHeading from "@/components/layout/section/section-heading";
 import Button from "@/components/ui/button";
 import TechnicalExpertiseCarousel from "@/components/pages/home/technical-expertise/technical-expertise-carousel";
 import FeaturedProjectsStack from "@/components/pages/home/featured-projects/featured-projects-stack";
+
+const reasonsToChooseUs = [
+  {
+    text: "Micron-level precision",
+    icon: Ruler,
+  },
+  {
+    text: "Rapid turnaround",
+    icon: Hourglass,
+  },
+  {
+    text: "Cutting-edge machinery",
+    icon: Cpu,
+  },
+  {
+    text: "30 years of expertise",
+    icon: Clock,
+  },
+  {
+    text: "Customer-centric focus",
+    icon: User,
+  },
+];
 
 export default function Home() {
   return (
@@ -187,6 +219,37 @@ export default function Home() {
             </div>
 
             <FeaturedProjectsStack />
+          </div>
+        </div>
+      </div>
+
+      {/* Why choose us */}
+      <div>
+        <div className={clsx(CONTENT_LAYOUT)}>
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:gap-12 lg:gap-27">
+            <div className="max-w-md md:max-w-sm lg:max-w-lg">
+              <SectionLabel icon={Star} className="mb-3">
+                Why choose us?
+              </SectionLabel>
+              <SectionHeading>
+                We offer the best combination of{" "}
+                <span className="text-primary">
+                  expertise, precision, and efficiency
+                </span>{" "}
+                in the industry.
+              </SectionHeading>
+            </div>
+            <div className="flex-1 md:max-w-lg">
+              {reasonsToChooseUs.map((reason) => (
+                <p
+                  className="w-full py-3 border-b last:border-b-0 font-semibold flex justify-between gap-3"
+                  key={reason.text}
+                >
+                  <span>{reason.text}</span>
+                  <reason.icon className="ml-3 text-primary" />
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </div>
