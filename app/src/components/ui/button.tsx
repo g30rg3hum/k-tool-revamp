@@ -6,6 +6,8 @@ import Link from "next/link";
 
 interface BaseProps {
   variant: "primary" | "outline" | "neutral";
+  size?: "sm" | "md";
+  square?: boolean;
   children: React.ReactNode;
 }
 
@@ -21,17 +23,29 @@ interface LinkProps extends BaseProps {
 
 type Props = ButtonProps | LinkProps;
 
-export default function Button({ variant, children, onClick, href }: Props) {
+export default function Button({
+  variant,
+  size = "md",
+  square = false,
+  children,
+  onClick,
+  href,
+}: Props) {
   const primaryStyles =
     "border-2 border-transparent bg-primary text-background";
   const outlineStyles = "border border-primary text-primary border-2";
-  const neutralStyles = "bg-neutral";
+  const neutralStyles = "bg-neutral text-foreground";
 
   const className = clsx(
-    "text-md w-max px-6 py-3 font-bold rounded-md flex items-center",
+    "font-bold rounded-md flex items-center shrink-0",
     variant === "primary" && primaryStyles,
     variant === "outline" && outlineStyles,
-    variant === "neutral" && neutralStyles
+    variant === "neutral" && neutralStyles,
+    square && "justify-center",
+    square && size === "md" && "w-12 h-12",
+    square && size === "sm" && "text-sm w-8 h-8",
+    !square && size === "md" && "text-md px-6 py-3",
+    !square && size === "sm" && "text-sm px-3 py-1"
   );
 
   const motionProps = {
@@ -39,7 +53,7 @@ export default function Button({ variant, children, onClick, href }: Props) {
     initial: "initial",
     variants: {
       whileHover: {
-        filter: variant === "neutral" ? "brightness(1.025)" : "brightness(1.4)",
+        filter: variant === "neutral" ? "brightness(1.1)" : "brightness(1.4)",
         cursor: "pointer",
       },
     },

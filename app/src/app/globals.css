@@ -3,7 +3,8 @@
 :root {
   --background: #ececf3;
   --foreground: #171717;
-  --primary: #07366c;
+  --primary: #0e4e97;
+  --primary-dark: #030d19;
   --neutral: #e5e5ee;
   --muted: #5f6572;
 }
@@ -12,6 +13,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
   --color-neutral: var(--neutral);
   --color-muted: var(--muted);
   --font-logo: var(--font-logo);

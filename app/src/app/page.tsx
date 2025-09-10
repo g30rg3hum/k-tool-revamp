@@ -1,14 +1,19 @@
 import HeroCarousel from "@/components/pages/home/hero/hero-carousel";
 import HeroButton from "@/components/pages/home/hero/hero-button";
-import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/constants/styles";
+import {
+  CONTENT_LAYOUT,
+  SPACE_BETWEEN_SECTIONS,
+  VERTICAL_PADDING,
+} from "@/constants/styles";
 import clsx from "clsx";
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import SectionLabel from "@/components/layout/section/section-label";
-import { Brain } from "lucide-react";
+import { Brain, Briefcase } from "lucide-react";
 import SectionHeading from "@/components/layout/section/section-heading";
 import Button from "@/components/ui/button";
 import TechnicalExpertiseCarousel from "@/components/pages/home/technical-expertise/technical-expertise-carousel";
+import FeaturedProjectsStack from "@/components/pages/home/featured-projects/featured-projects-stack";
 
 export default function Home() {
   return (
@@ -50,7 +55,7 @@ export default function Home() {
               Precision engineering
             </span>
             {/* Custom heading */}
-            <h2 className="text-4xl sm:text-5xl font-bold space-y-3 text-center mb-3">
+            <h2 className="text-4xl sm:text-5xl font-bold space-y-1 text-center mb-3">
               <span className="block">Your vision.</span>
               <span className="block text-primary font-serif font-semibold">
                 Our <span className="">precision.</span>
@@ -70,7 +75,7 @@ export default function Home() {
       </div>
 
       {/* What we do */}
-      <div>
+      <div className="overflow-x-clip">
         <div className={clsx("flex flex-col gap-9 relative", CONTENT_LAYOUT)}>
           {/* Top right blob */}
           <motion.div
@@ -136,9 +141,11 @@ export default function Home() {
                 Our complete in-house capabilities and 30 years of mastery turn
                 your challenging designs into perfect parts, fast.
               </p>
-              <Button variant="primary" href="">
-                Learn more
-              </Button>
+              <div className="w-max">
+                <Button variant="primary" href="">
+                  Learn more
+                </Button>
+              </div>
             </div>
           </div>
 
@@ -147,8 +154,42 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Highlight projects */}
-      <div></div>
+      {/* Featured projects */}
+      <div className="bg-[url('/images/shapes/waves/layered/1.png')] bg-cover bg-center text-neutral">
+        <div className={clsx(CONTENT_LAYOUT, VERTICAL_PADDING)}>
+          {/* Content */}
+          <div>
+            <div className="flex justify-between items-center mb-6">
+              <SectionLabel icon={Briefcase}>Featured projects</SectionLabel>
+              <div className="hidden sm:block">
+                <Button variant="neutral" href="">
+                  View all our projects
+                </Button>
+              </div>
+            </div>
+
+            <div className="max-w-xl mx-auto mb-6 sm:mb-12">
+              <SectionHeading className="text-right mb-6">
+                A <span className="text-primary">glimpse</span> into our{" "}
+                <span className="text-primary">best work.</span>
+              </SectionHeading>
+              <p className="text-left">
+                Some of the projects we&apos;ve worked on and are particularly
+                proud of thus far, to help you get a sense of the tangible
+                results our expertise can deliver.
+              </p>
+            </div>
+
+            <div className="block mb-12 sm:hidden sm:mb-0">
+              <Button variant="neutral" href="">
+                View all our projects
+              </Button>
+            </div>
+
+            <FeaturedProjectsStack />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

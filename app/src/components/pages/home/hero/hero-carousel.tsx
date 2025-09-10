@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 type Direction = "left" | "right";
-export default function Carousel() {
+export default function HeroCarousel() {
   const [currentImage, setCurrentImage] = useState(1);
   const [direction, setDirection] = useState<Direction>("right");
   const maxImages = 3;
