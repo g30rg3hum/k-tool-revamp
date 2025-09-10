@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Button from "../../ui/button";
 import DesktopLinkListItem from "./desktop-link-list-item";
 import MobileMenu from "./mobile-menu";
-import { CONTENT_STYLES } from "@/constants/styles";
+import { CONTENT_LAYOUT, VERTICAL_PADDING } from "@/constants/styles";
 
 export const mainPages = [
   { href: "/", title: "Home" },
@@ -15,8 +15,9 @@ export default function Header() {
   return (
     <header
       className={clsx(
-        "py-12 flex justify-between items-center",
-        CONTENT_STYLES
+        "flex justify-between items-center",
+        CONTENT_LAYOUT,
+        VERTICAL_PADDING
       )}
     >
       <h1 className="font-logo text-4xl">K-TOOL</h1>

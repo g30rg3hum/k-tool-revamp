@@ -22,7 +22,8 @@ interface LinkProps extends BaseProps {
 type Props = ButtonProps | LinkProps;
 
 export default function Button({ variant, children, onClick, href }: Props) {
-  const primaryStyles = "bg-primary text-background";
+  const primaryStyles =
+    "border-2 border-transparent bg-primary text-background";
   const outlineStyles = "border border-primary text-primary border-2";
   const neutralStyles = "bg-neutral";
 

@@ -3,7 +3,7 @@
 import Button from "@/components/ui/button";
 import { MoveLeft, MoveRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Direction = "left" | "right";
 export default function Carousel() {
@@ -16,7 +16,7 @@ export default function Carousel() {
     whileHover: { opacity: 0.6 },
   };
 
-  const slideAmount = 50;
+  const slideAmount = 20;
   const slideVariants = {
     initial: (direction: Direction) => ({
       x: direction === "right" ? slideAmount : -slideAmount,
@@ -32,12 +32,20 @@ export default function Carousel() {
     }),
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDirection("right");
+      setCurrentImage((prev) => (prev === maxImages ? 1 : prev + 1));
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [maxImages]);
+
   return (
     <motion.div
       whileHover="whileHover"
       initial="initial"
-      className="relative flex-1 mb-9 w-full rounded-md min-h-[250px]"
-      style={{ backgroundImage: `url('/images/stock/${currentImage}.jpg')` }}
+      className="relative flex-1 w-full rounded-md"
     >
       <AnimatePresence mode="popLayout" custom={direction}>
         <motion.div
@@ -49,7 +57,7 @@ export default function Carousel() {
           transition={{ duration: 0.3 }}
           className="absolute inset-0 bg-cover bg-center rounded-md"
           style={{
-            backgroundImage: `url('/images/stock/${currentImage}.jpg')`,
+            backgroundImage: `url('/images/stock/home/hero/${currentImage}.jpg')`,
           }}
         />
       </AnimatePresence>
@@ -65,7 +73,7 @@ export default function Carousel() {
           variant="neutral"
         >
           <motion.div variants={{ initial: { x: 0 }, whileHover: { x: -2 } }}>
-            <MoveLeft size={16} />
+            <MoveLeft size={20} />
           </motion.div>
         </Button>
       </motion.div>
@@ -81,7 +89,7 @@ export default function Carousel() {
           variant="neutral"
         >
           <motion.div variants={{ initial: { x: 0 }, whileHover: { x: 2 } }}>
-            <MoveRight size={16} />
+            <MoveRight size={20} />
           </motion.div>
         </Button>
       </motion.div>

@@ -3,8 +3,9 @@
 :root {
   --background: #ececf3;
   --foreground: #171717;
-  --primary: #002147;
-  --neutral: #dadae8;
+  --primary: #07366c;
+  --neutral: #e5e5ee;
+  --muted: #5f6572;
 }
 
 @theme inline {
@@ -12,6 +13,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-neutral: var(--neutral);
+  --color-muted: var(--muted);
   --font-logo: var(--font-logo);
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);

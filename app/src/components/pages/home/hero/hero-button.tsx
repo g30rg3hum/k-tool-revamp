@@ -9,10 +9,10 @@ export default function HeroButton() {
     <Button variant="primary" onClick={() => {}}>
       See what&apos;s possible{" "}
       <motion.div
-        className="inline-block ml-1"
+        className="inline-block ml-3"
         variants={{ initial: { y: 0 }, whileHover: { y: 2 } }}
       >
-        <MoveDown size={16} />
+        <MoveDown size={20} />
       </motion.div>
     </Button>
   );
