@@ -1,4 +1,4 @@
-import { CONTENT_LAYOUT, VERTICAL_PADDING } from "@/lib/constants/styles";
+import { CONTENT_LAYOUT } from "@/lib/constants/styles";
 import clsx from "clsx";
 import ContentHeading from "../section/content/content-heading";
 import { mainPages } from "@/lib/constants/nav";
