@@ -3,14 +3,8 @@ import Button from "../../ui/button";
 import DesktopLinkListItem from "./desktop-link-list-item";
 import MobileMenu from "./mobile-menu";
 import { CONTENT_LAYOUT, VERTICAL_PADDING } from "@/lib/constants/styles";
+import { mainPages } from "@/lib/constants/nav";
 
-export const mainPages = [
-  { href: "/", title: "Home" },
-  { href: "/about", title: "About" },
-  { href: "/projects", title: "Projects" },
-  { href: "/equipment", title: "Equipment" },
-  { href: "/quality-assurance", title: "Quality" },
-];
 export default function Header() {
   return (
     <header

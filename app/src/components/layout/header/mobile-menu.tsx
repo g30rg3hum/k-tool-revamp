@@ -2,12 +2,12 @@
 
 import Button from "@/components/ui/button";
 import { useState } from "react";
-import { mainPages } from "./header";
 import { AnimatePresence, motion } from "motion/react";
 import MobileLinkListItem from "./mobile-link-list-item";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
 import { HORIZONTAL_PADDING } from "@/lib/constants/styles";
+import { mainPages } from "@/lib/constants/nav";
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

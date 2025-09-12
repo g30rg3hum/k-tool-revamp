@@ -7,6 +7,7 @@ import {
 import "./globals.css";
 import Header from "@/components/layout/header/header";
 import { Toaster } from "react-hot-toast";
+import Footer from "@/components/layout/footer/footer";
 
 const logoFont = Special_Gothic_Expanded_One({
   variable: "--font-logo",
@@ -43,6 +44,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Toaster />
+        <Footer />
       </body>
     </html>
   );
