@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "motion/react";
 import MobileLinkListItem from "./mobile-link-list-item";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
-import { HORIZONTAL_PADDING } from "@/constants/styles";
+import { HORIZONTAL_PADDING } from "@/lib/constants/styles";
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

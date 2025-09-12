@@ -1,4 +1,4 @@
-import { SECTION_LABEL } from "@/constants/styles";
+import { SECTION_LABEL } from "@/lib/constants/styles";
 import clsx from "clsx";
 import { LucideIcon } from "lucide-react";
 

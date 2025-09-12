@@ -1,4 +1,4 @@
-import { CONTENT_HEADING } from "@/constants/styles";
+import { CONTENT_HEADING } from "@/lib/constants/styles";
 import clsx from "clsx";
 
 interface Props {

@@ -4,7 +4,7 @@ import {
   CONTENT_LAYOUT,
   SPACE_BETWEEN_SECTIONS,
   VERTICAL_PADDING,
-} from "@/constants/styles";
+} from "@/lib/constants/styles";
 import clsx from "clsx";
 import Image from "next/image";
 import * as motion from "motion/react-client";
@@ -14,7 +14,9 @@ import {
   Briefcase,
   Clock,
   Cpu,
+  Globe,
   Hourglass,
+  Phone,
   Ruler,
   Star,
   User,
@@ -23,8 +25,14 @@ import SectionHeading from "@/components/layout/section/section-heading";
 import Button from "@/components/ui/button";
 import TechnicalExpertiseCarousel from "@/components/pages/home/technical-expertise/technical-expertise-carousel";
 import FeaturedProjectsStack from "@/components/pages/home/featured-projects/featured-projects-stack";
+import Hyperlink from "@/components/ui/hyperlink";
+import GeneralContactForm from "@/components/pages/contact/general-contact-form";
 
 const reasonsToChooseUs = [
+  {
+    text: "Customer-centric focus",
+    icon: User,
+  },
   {
     text: "Micron-level precision",
     icon: Ruler,
@@ -38,12 +46,8 @@ const reasonsToChooseUs = [
     icon: Cpu,
   },
   {
-    text: "30 years of expertise",
+    text: "30 years of mastery",
     icon: Clock,
-  },
-  {
-    text: "Customer-centric focus",
-    icon: User,
   },
 ];
 
@@ -69,7 +73,7 @@ export default function Home() {
           <Image
             src="/images/shapes/waves/1.svg"
             alt="Wave shape"
-            className="w-full h-full object-cover opacity-10"
+            className="w-full h-full object-cover opacity-5"
             width={1000}
             height={1000}
           />
@@ -83,7 +87,7 @@ export default function Home() {
         >
           {/* Text */}
           <div className="flex flex-col items-center w-full">
-            <span className="text-center w-max px-3 rounded-md bg-neutral mb-6">
+            <span className="font-semibold text-center w-max px-3 rounded-md bg-neutral mb-6">
               Precision engineering
             </span>
             {/* Custom heading */}
@@ -110,7 +114,7 @@ export default function Home() {
       <div className="overflow-x-clip">
         <div className={clsx("flex flex-col gap-9 relative", CONTENT_LAYOUT)}>
           {/* Top right blob */}
-          <motion.div
+          {/* <motion.div
             animate={{
               scaleX: [1, 1.1, 1, 1],
               scaleY: [1, 1, 1.1, 1],
@@ -126,14 +130,14 @@ export default function Home() {
             <Image
               src="/images/shapes/blobs/1.svg"
               alt="Blob shape"
-              className="opacity-10"
+              className="opacity-5"
               width={350}
               height={350}
             />
-          </motion.div>
+          </motion.div> */}
 
           {/* Top right blob */}
-          <motion.div
+          {/* <motion.div
             animate={{
               scaleX: [1, 1.1, 1, 1],
               scaleY: [1, 1, 1.1, 1],
@@ -149,11 +153,11 @@ export default function Home() {
             <Image
               src="/images/shapes/blobs/2.svg"
               alt="Blob shape"
-              className="opacity-10"
+              className="opacity-5"
               width={285}
               height={285}
             />
-          </motion.div>
+          </motion.div> */}
 
           {/* Content */}
           {/* Heading and description */}
@@ -187,33 +191,33 @@ export default function Home() {
       </div>
 
       {/* Featured projects */}
-      <div className="bg-[url('/images/shapes/waves/layered/1.png')] bg-cover bg-center text-neutral">
-        <div className={clsx(CONTENT_LAYOUT, VERTICAL_PADDING)}>
+      <div>
+        <div className={clsx(CONTENT_LAYOUT)}>
           {/* Content */}
           <div>
-            <div className="flex justify-between items-center mb-6">
+            <div className="flex justify-between items-center mb-3 sm:mb-6">
               <SectionLabel icon={Briefcase}>Featured projects</SectionLabel>
               <div className="hidden sm:block">
-                <Button variant="neutral" href="">
+                <Button variant="primary" href="">
                   View all our projects
                 </Button>
               </div>
             </div>
 
-            <div className="max-w-xl mx-auto mb-6 sm:mb-12">
-              <SectionHeading className="text-right mb-6">
+            <div className="max-w-lg md:max-w-xl mx-auto mb-6 sm:mb-9">
+              <SectionHeading className="text-left sm:text-right mb-6">
                 A <span className="text-primary">glimpse</span> into our{" "}
                 <span className="text-primary">best work.</span>
               </SectionHeading>
               <p className="text-left">
                 Some of the projects we&apos;ve worked on and are particularly
-                proud of thus far, to help you get a sense of the tangible
-                results our expertise can deliver.
+                proud of thus far, to help you get a sense of the actual results
+                our expertise can deliver.
               </p>
             </div>
 
-            <div className="block mb-12 sm:hidden sm:mb-0">
-              <Button variant="neutral" href="">
+            <div className="block mb-9 sm:hidden sm:mb-0">
+              <Button variant="primary" href="">
                 View all our projects
               </Button>
             </div>
@@ -226,20 +230,25 @@ export default function Home() {
       {/* Why choose us */}
       <div>
         <div className={clsx(CONTENT_LAYOUT)}>
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:gap-12 lg:gap-27">
-            <div className="max-w-md md:max-w-sm lg:max-w-lg">
-              <SectionLabel icon={Star} className="mb-3">
-                Why choose us?
-              </SectionLabel>
-              <SectionHeading>
-                We offer the best combination of{" "}
-                <span className="text-primary">
-                  expertise, precision, and efficiency
-                </span>{" "}
-                in the industry.
-              </SectionHeading>
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:gap-12 lg:gap-18">
+            <div className="md:max-w-sm lg:max-w-lg flex flex-col gap-6">
+              <div>
+                <SectionLabel icon={Star} className="mb-3">
+                  Why choose us?
+                </SectionLabel>
+                <SectionHeading>
+                  We offer the best combination of{" "}
+                  <span className="text-primary">
+                    expertise, precision, and efficiency
+                  </span>{" "}
+                  in the industry.
+                </SectionHeading>
+              </div>
+              <Button widthWrap variant="primary" href="">
+                More about us
+              </Button>
             </div>
-            <div className="flex-1 md:max-w-lg">
+            <div className="flex-1 md:max-w-xl">
               {reasonsToChooseUs.map((reason) => (
                 <p
                   className="w-full py-3 border-b last:border-b-0 font-semibold flex justify-between gap-3"
@@ -249,6 +258,70 @@ export default function Home() {
                   <reason.icon className="ml-3 text-primary" />
                 </p>
               ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Global outreach */}
+      <div>
+        <div className={clsx(CONTENT_LAYOUT)}>
+          <SectionLabel icon={Globe} className="mb-3">
+            Global outreach
+          </SectionLabel>
+          <div className="relative mx-auto mb-3 flex justify-center">
+            <Image
+              src="/images/countries.svg"
+              alt="Map with countries we serve"
+              width={800}
+              height={800}
+            />
+            <div className="absolute bottom-0 left-0 right-0 h-30 md:h-60 lg:h-80 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+          </div>
+
+          <SectionHeading className="text-left max-w-xl lg:max-w-2xl sm:mx-auto sm:text-center mb-6">
+            Delivering <span className="text-primary">exceptional quality</span>{" "}
+            in
+            <span className="text-primary"> several countries</span> across
+            <span className="text-primary"> several continents.</span>
+          </SectionHeading>
+          <div className="text-left max-w-2xl sm:mx-auto sm:text-center space-y-3">
+            <p>
+              We&apos;re based in Malaysia, but our methods are scalable and
+              designed for global reach. This way, we can support you wherever
+              you are, and provide the same exceptional service every time that
+              extends beyond borders.
+            </p>
+            <p className="font-semibold">
+              Currently, we serve: USA, Austria, Germany, Ireland, Malaysia,
+              Thailand, Vietnam, Indonesia, Singapore, and Japan.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-primary-dark text-neutral">
+        <div className={clsx(CONTENT_LAYOUT, VERTICAL_PADDING)}>
+          <div className="flex flex-col md:flex-row justify-between gap-6">
+            <div className="md:max-w-lg">
+              <SectionLabel icon={Phone} className="mb-3">
+                Contact
+              </SectionLabel>
+              <SectionHeading className="mb-6">
+                How can we <span className="text-primary">help?</span>
+              </SectionHeading>
+              <p className="mb-3">
+                If you have general inquiries about us and what we do, please
+                fill in the form on the right and we&apos;ll get in touch with
+                you as soon as we can.
+              </p>
+              <p>
+                However, if you already have a project or specific requirements
+                in mind, please let us know <Hyperlink href="">here</Hyperlink>.
+              </p>
+            </div>
+            <div className="w-full grow md:max-w-lg">
+              <GeneralContactForm />
             </div>
           </div>
         </div>

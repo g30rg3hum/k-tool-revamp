@@ -6,6 +6,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/header/header";
+import { Toaster } from "react-hot-toast";
 
 const logoFont = Special_Gothic_Expanded_One({
   variable: "--font-logo",
@@ -37,10 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${logoFont.variable} ${sans.variable} ${serif.variable} antialiased`}
+        className={`${logoFont.variable} ${sans.variable} ${serif.variable} antialiased font-medium`}
       >
         <Header />
         {children}
+        <Toaster />
       </body>
     </html>
   );

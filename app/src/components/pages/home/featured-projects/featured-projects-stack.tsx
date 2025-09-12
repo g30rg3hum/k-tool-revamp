@@ -9,26 +9,22 @@ import { useState } from "react";
 const projects = [
   {
     title: "Precision tooling for stamping applications",
-    description:
-      "This project focuses on developing precision tooling solutions for stamping applications in various industries.",
+    description: "[...]",
     image: "1.jpg",
   },
   {
     title: "High-performance components for semiconductor manufacturing",
-    description:
-      "This project aims to create high-performance components specifically designed for the semiconductor manufacturing process.",
+    description: "[...]",
     image: "2.jpg",
   },
   {
     title: "High-precision mold inserts for connector and housing production",
-    description:
-      "This project focuses on developing high-precision mold inserts for connector and housing production, ensuring optimal fit and functionality.",
+    description: "[...]",
     image: "3.jpg",
   },
   {
     title: "Custom tooling solutions for automotive parts manufacturing",
-    description:
-      "This project aims to create custom tooling solutions tailored for the unique requirements of automotive parts manufacturing.",
+    description: "[...]",
     image: "4.jpg",
   },
 ];

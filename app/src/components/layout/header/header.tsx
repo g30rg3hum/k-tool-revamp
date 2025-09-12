@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Button from "../../ui/button";
 import DesktopLinkListItem from "./desktop-link-list-item";
 import MobileMenu from "./mobile-menu";
-import { CONTENT_LAYOUT, VERTICAL_PADDING } from "@/constants/styles";
+import { CONTENT_LAYOUT, VERTICAL_PADDING } from "@/lib/constants/styles";
 
 export const mainPages = [
   { href: "/", title: "Home" },

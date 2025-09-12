@@ -80,7 +80,7 @@ export default function TechnicalExpertiseCarousel() {
             )}
           >
             <div className="p-6">
-              <ContentHeading className="mb-3 border-b border-primary">
+              <ContentHeading className="mb-3 border-b">
                 {point.title}
               </ContentHeading>
 
