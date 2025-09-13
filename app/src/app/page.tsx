@@ -27,6 +27,7 @@ import TechnicalExpertiseCarousel from "@/components/pages/home/technical-expert
 import FeaturedProjectsStack from "@/components/pages/home/featured-projects/featured-projects-stack";
 import Hyperlink from "@/components/ui/hyperlink";
 import GeneralContactForm from "@/components/pages/contact/general-contact-form";
+import FadeOnScroll from "@/components/animations/fade-on-scroll";
 
 const reasonsToChooseUs = [
   {
@@ -79,7 +80,7 @@ export default function Home() {
           />
         </motion.div>
         {/* Content */}
-        <div
+        <FadeOnScroll
           className={clsx(
             "flex flex-col items-center min-h-screen gap-9",
             CONTENT_LAYOUT
@@ -107,11 +108,11 @@ export default function Home() {
           </div>
           {/* Carousel */}
           <HeroCarousel />
-        </div>
+        </FadeOnScroll>
       </div>
 
       {/* What we do */}
-      <div className="overflow-x-clip">
+      <div className="overflow-x-clip" id="what-we-do">
         <div className={clsx("flex flex-col gap-9 relative", CONTENT_LAYOUT)}>
           {/* Top right blob */}
           {/* <motion.div
@@ -161,7 +162,7 @@ export default function Home() {
 
           {/* Content */}
           {/* Heading and description */}
-          <div className="flex flex-col md:flex-row gap-6">
+          <FadeOnScroll className="flex flex-col md:flex-row gap-6">
             <div className="md:w-[40%]">
               <SectionLabel className="mb-3" icon={Brain}>
                 Technical expertise
@@ -183,10 +184,12 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-          </div>
+          </FadeOnScroll>
 
           {/* Moving card carousel */}
-          <TechnicalExpertiseCarousel />
+          <FadeOnScroll>
+            <TechnicalExpertiseCarousel />
+          </FadeOnScroll>
         </div>
       </div>
 
@@ -195,34 +198,38 @@ export default function Home() {
         <div className={clsx(CONTENT_LAYOUT)}>
           {/* Content */}
           <div>
-            <div className="flex justify-between items-center mb-3 sm:mb-6">
-              <SectionLabel icon={Briefcase}>Featured projects</SectionLabel>
-              <div className="hidden sm:block">
+            <FadeOnScroll>
+              <div className="flex justify-between items-center mb-3 sm:mb-6">
+                <SectionLabel icon={Briefcase}>Featured projects</SectionLabel>
+                <div className="hidden sm:block">
+                  <Button variant="primary" href="">
+                    View all our projects
+                  </Button>
+                </div>
+              </div>
+
+              <div className="max-w-lg md:max-w-xl mx-auto mb-6 sm:mb-9">
+                <SectionHeading className="text-left sm:text-right mb-6">
+                  A <span className="text-primary">glimpse</span> into our{" "}
+                  <span className="text-primary">best work.</span>
+                </SectionHeading>
+                <p className="text-left">
+                  Some of the projects we&apos;ve worked on and are particularly
+                  proud of thus far, to help you get a sense of the actual
+                  results our expertise can deliver.
+                </p>
+              </div>
+
+              <div className="block mb-9 sm:hidden sm:mb-0">
                 <Button variant="primary" href="">
                   View all our projects
                 </Button>
               </div>
-            </div>
+            </FadeOnScroll>
 
-            <div className="max-w-lg md:max-w-xl mx-auto mb-6 sm:mb-9">
-              <SectionHeading className="text-left sm:text-right mb-6">
-                A <span className="text-primary">glimpse</span> into our{" "}
-                <span className="text-primary">best work.</span>
-              </SectionHeading>
-              <p className="text-left">
-                Some of the projects we&apos;ve worked on and are particularly
-                proud of thus far, to help you get a sense of the actual results
-                our expertise can deliver.
-              </p>
-            </div>
-
-            <div className="block mb-9 sm:hidden sm:mb-0">
-              <Button variant="primary" href="">
-                View all our projects
-              </Button>
-            </div>
-
-            <FeaturedProjectsStack />
+            <FadeOnScroll>
+              <FeaturedProjectsStack />
+            </FadeOnScroll>
           </div>
         </div>
       </div>
@@ -231,7 +238,7 @@ export default function Home() {
       <div>
         <div className={clsx(CONTENT_LAYOUT)}>
           <div className="flex flex-col justify-between gap-6 md:flex-row md:gap-12 lg:gap-18">
-            <div className="md:max-w-sm lg:max-w-lg flex flex-col gap-6">
+            <FadeOnScroll className="md:max-w-sm lg:max-w-lg flex flex-col gap-6">
               <div>
                 <SectionLabel icon={Star} className="mb-3">
                   Why choose us?
@@ -247,8 +254,8 @@ export default function Home() {
               <Button widthWrap variant="primary" href="">
                 More about us
               </Button>
-            </div>
-            <div className="flex-1 md:max-w-xl">
+            </FadeOnScroll>
+            <FadeOnScroll className="flex-1 md:max-w-xl">
               {reasonsToChooseUs.map((reason) => (
                 <p
                   className="w-full py-3 border-b last:border-b-0 font-semibold flex justify-between gap-3"
@@ -258,7 +265,7 @@ export default function Home() {
                   <reason.icon className="ml-3 text-primary" />
                 </p>
               ))}
-            </div>
+            </FadeOnScroll>
           </div>
         </div>
       </div>
@@ -266,44 +273,48 @@ export default function Home() {
       {/* Global outreach */}
       <div>
         <div className={clsx(CONTENT_LAYOUT)}>
-          <SectionLabel icon={Globe} className="mb-3">
-            Global outreach
-          </SectionLabel>
-          <div className="relative mx-auto mb-3 flex justify-center">
-            <Image
-              src="/images/countries.svg"
-              alt="Map with countries we serve"
-              width={800}
-              height={800}
-            />
-            <div className="absolute bottom-0 left-0 right-0 h-30 md:h-60 lg:h-80 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-          </div>
+          <FadeOnScroll>
+            <SectionLabel icon={Globe} className="mb-3">
+              Global outreach
+            </SectionLabel>
+            <div className="relative mx-auto mb-3 flex justify-center">
+              <Image
+                src="/images/countries.svg"
+                alt="Map with countries we serve"
+                width={800}
+                height={800}
+              />
+              <div className="absolute bottom-0 left-0 right-0 h-30 md:h-60 lg:h-80 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+            </div>
+          </FadeOnScroll>
 
-          <SectionHeading className="text-left max-w-xl lg:max-w-2xl sm:mx-auto sm:text-center mb-6">
-            Delivering <span className="text-primary">exceptional quality</span>{" "}
-            in
-            <span className="text-primary"> several countries</span> across
-            <span className="text-primary"> several continents.</span>
-          </SectionHeading>
-          <div className="text-left max-w-2xl sm:mx-auto sm:text-center space-y-3">
-            <p>
-              We&apos;re based in Malaysia, but our methods are scalable and
-              designed for global reach. This way, we can support you wherever
-              you are, and provide the same exceptional service every time that
-              extends beyond borders.
-            </p>
-            <p className="font-semibold">
-              Currently, we serve: USA, Austria, Germany, Ireland, Malaysia,
-              Thailand, Vietnam, Indonesia, Singapore, and Japan.
-            </p>
-          </div>
+          <FadeOnScroll>
+            <SectionHeading className="text-left max-w-xl lg:max-w-2xl sm:mx-auto sm:text-center mb-6">
+              Delivering{" "}
+              <span className="text-primary">exceptional quality</span> in
+              <span className="text-primary"> several countries</span> across
+              <span className="text-primary"> several continents.</span>
+            </SectionHeading>
+            <div className="text-left max-w-2xl sm:mx-auto sm:text-center space-y-3">
+              <p>
+                We&apos;re based in Malaysia, but our methods are scalable and
+                designed for global reach. This way, we can support you wherever
+                you are, and provide the same exceptional service every time
+                that extends beyond borders.
+              </p>
+              <p className="font-semibold">
+                Currently, we serve: USA, Austria, Germany, Ireland, Malaysia,
+                Thailand, Vietnam, Indonesia, Singapore, and Japan.
+              </p>
+            </div>
+          </FadeOnScroll>
         </div>
       </div>
 
       <div className="bg-primary-dark text-neutral">
         <div className={clsx(CONTENT_LAYOUT, VERTICAL_PADDING)}>
           <div className="flex flex-col md:flex-row justify-between gap-6">
-            <div className="md:max-w-lg">
+            <FadeOnScroll className="md:max-w-lg">
               <SectionLabel icon={Phone} className="mb-3">
                 Contact
               </SectionLabel>
@@ -319,10 +330,10 @@ export default function Home() {
                 However, if you already have a project or specific requirements
                 in mind, please let us know <Hyperlink href="">here</Hyperlink>.
               </p>
-            </div>
-            <div className="w-full grow md:max-w-lg">
+            </FadeOnScroll>
+            <FadeOnScroll className="w-full grow md:max-w-lg">
               <GeneralContactForm />
-            </div>
+            </FadeOnScroll>
           </div>
         </div>
       </div>
