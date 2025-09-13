@@ -5,8 +5,23 @@ import { MoveDown } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function HeroButton() {
+  const scrollToSection = () => {
+    const element = document.getElementById("what-we-do");
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
+      console.log(elementPosition);
+      console.log(window.pageYOffset);
+      const offsetPosition = elementPosition + window.pageYOffset - 50;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <Button variant="primary" onClick={() => {}}>
+    <Button variant="primary" onClick={scrollToSection}>
       See what&apos;s possible{" "}
       <motion.div
         className="inline-block ml-3"

@@ -4,41 +4,47 @@ import DesktopLinkListItem from "./desktop-link-list-item";
 import MobileMenu from "./mobile-menu";
 import { CONTENT_LAYOUT, VERTICAL_PADDING } from "@/lib/constants/styles";
 import { mainPages } from "@/lib/constants/nav";
+import FadeOnScroll from "@/components/animations/fade-on-scroll";
 
 export default function Header() {
   return (
-    <header
-      className={clsx(
-        "flex justify-between items-center",
-        CONTENT_LAYOUT,
-        VERTICAL_PADDING
-      )}
-    >
-      <h1 className="font-logo text-4xl">K-TOOL</h1>
+    <header>
+      <FadeOnScroll
+        className={clsx(
+          "flex justify-between items-center",
+          CONTENT_LAYOUT,
+          VERTICAL_PADDING
+        )}
+      >
+        <h1 className="font-logo text-4xl">K-TOOL</h1>
 
-      {/* Desktop navigation */}
-      <nav className="hidden lg:block">
-        <ul className="font-bold flex gap-6">
-          {mainPages.map((page) => (
-            <DesktopLinkListItem key={`desktop:${page.href}`} href={page.href}>
-              {page.title}
-            </DesktopLinkListItem>
-          ))}
-        </ul>
-      </nav>
-      <div className="gap-6 hidden lg:flex">
-        <Button variant="primary" href="/get-quote">
-          Get instant quote
-        </Button>
-        <Button variant="outline" href="/contact">
-          Contact us
-        </Button>
-      </div>
+        {/* Desktop navigation */}
+        <nav className="hidden lg:block">
+          <ul className="font-bold flex gap-6">
+            {mainPages.map((page) => (
+              <DesktopLinkListItem
+                key={`desktop:${page.href}`}
+                href={page.href}
+              >
+                {page.title}
+              </DesktopLinkListItem>
+            ))}
+          </ul>
+        </nav>
+        <div className="gap-6 hidden lg:flex">
+          <Button variant="primary" href="/get-quote">
+            Get instant quote
+          </Button>
+          <Button variant="outline" href="/contact">
+            Contact us
+          </Button>
+        </div>
 
-      {/* Smaller screens */}
-      <div className="lg:hidden">
-        <MobileMenu />
-      </div>
+        {/* Smaller screens */}
+        <div className="lg:hidden">
+          <MobileMenu />
+        </div>
+      </FadeOnScroll>
     </header>
   );
 }
