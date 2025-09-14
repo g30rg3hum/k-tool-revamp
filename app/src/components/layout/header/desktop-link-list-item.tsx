@@ -1,10 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 
-// TODO: might have to change Link to anchor.
 interface Props {
   href: string;
   children: React.ReactNode;
@@ -27,7 +25,7 @@ export default function DesktopLinkListItem({ href, children }: Props) {
         isCurrentPath ? "text-primary" : "border-b-2 border-transparent"
       }
     >
-      {isCurrentPath ? children : <Link href={href}>{children}</Link>}
+      {isCurrentPath ? children : <a href={href}>{children}</a>}
     </motion.li>
   );
 }

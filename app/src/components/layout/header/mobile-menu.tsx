@@ -8,15 +8,18 @@ import { Menu, X } from "lucide-react";
 import clsx from "clsx";
 import { HORIZONTAL_PADDING } from "@/lib/constants/styles";
 import { mainPages } from "@/lib/constants/nav";
+import FadeOnScroll from "@/components/animations/fade-on-scroll";
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
-      <Button variant="neutral" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <Menu size={20} />
-      </Button>
+      <FadeOnScroll direction="down">
+        <Button variant="neutral" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <Menu size={20} />
+        </Button>
+      </FadeOnScroll>
 
       <AnimatePresence>
         {isMenuOpen && (

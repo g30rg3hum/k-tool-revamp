@@ -8,18 +8,19 @@ import FadeOnScroll from "@/components/animations/fade-on-scroll";
 
 export default function Header() {
   return (
-    <header>
-      <FadeOnScroll
-        direction="down"
-        className={clsx(
-          "flex justify-between items-center",
-          CONTENT_LAYOUT,
-          VERTICAL_PADDING
-        )}
-      >
+    <header
+      className={clsx(
+        "flex justify-between items-center",
+        CONTENT_LAYOUT,
+        VERTICAL_PADDING
+      )}
+    >
+      <FadeOnScroll direction="down">
         <h1 className="font-logo text-4xl">K-TOOL</h1>
+      </FadeOnScroll>
 
-        {/* Desktop navigation */}
+      {/* Desktop navigation */}
+      <FadeOnScroll direction="down">
         <nav className="hidden lg:block">
           <ul className="font-bold flex gap-6">
             {mainPages.map((page) => (
@@ -32,6 +33,9 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+      </FadeOnScroll>
+
+      <FadeOnScroll direction="down">
         <div className="gap-6 hidden lg:flex">
           <Button variant="primary" href="/get-quote">
             Get instant quote
@@ -40,12 +44,12 @@ export default function Header() {
             Contact us
           </Button>
         </div>
-
-        {/* Smaller screens */}
-        <div className="lg:hidden">
-          <MobileMenu />
-        </div>
       </FadeOnScroll>
+
+      {/* Smaller screens */}
+      <div className="lg:hidden">
+        <MobileMenu />
+      </div>
     </header>
   );
 }

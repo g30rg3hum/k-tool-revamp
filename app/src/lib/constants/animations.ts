@@ -1,2 +1,2 @@
-export const movementAmount = 10;
-export const animationDuration = 1;
+export const movementAmount = 20;
+export const animationDuration = 1.25;

@@ -2,7 +2,6 @@ import { CONTENT_LAYOUT } from "@/lib/constants/styles";
 import clsx from "clsx";
 import ContentHeading from "../section/content/content-heading";
 import { mainPages } from "@/lib/constants/nav";
-import Link from "next/link";
 import FadeOnScroll from "@/components/animations/fade-on-scroll";
 
 export default function Footer() {
@@ -22,7 +21,7 @@ export default function Footer() {
                 <ul>
                   {mainPages.map((page) => (
                     <li key={page.title}>
-                      <Link href={page.href}>{page.title}</Link>
+                      <a href={page.href}>{page.title}</a>
                     </li>
                   ))}
                 </ul>

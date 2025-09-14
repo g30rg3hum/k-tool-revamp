@@ -1,10 +1,6 @@
 import HeroCarousel from "@/components/pages/home/hero/hero-carousel";
 import HeroButton from "@/components/pages/home/hero/hero-button";
-import {
-  CONTENT_LAYOUT,
-  SPACE_BETWEEN_SECTIONS,
-  VERTICAL_PADDING,
-} from "@/lib/constants/styles";
+import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/lib/constants/styles";
 import clsx from "clsx";
 import Image from "next/image";
 import * as motion from "motion/react-client";
@@ -16,7 +12,6 @@ import {
   Cpu,
   Globe,
   Hourglass,
-  Phone,
   Ruler,
   Star,
   User,
@@ -25,9 +20,8 @@ import SectionHeading from "@/components/layout/section/section-heading";
 import Button from "@/components/ui/button";
 import TechnicalExpertiseCarousel from "@/components/pages/home/technical-expertise/technical-expertise-carousel";
 import FeaturedProjectsStack from "@/components/pages/home/featured-projects/featured-projects-stack";
-import Hyperlink from "@/components/ui/hyperlink";
-import GeneralContactForm from "@/components/pages/contact/general-contact-form";
 import FadeOnScroll from "@/components/animations/fade-on-scroll";
+import GeneralContact from "@/components/pages/sections/general-contact";
 
 const reasonsToChooseUs = [
   {
@@ -311,32 +305,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-primary-dark text-neutral">
-        <div className={clsx(CONTENT_LAYOUT, VERTICAL_PADDING)}>
-          <div className="flex flex-col md:flex-row justify-between gap-6">
-            <FadeOnScroll className="md:max-w-lg">
-              <SectionLabel icon={Phone} className="mb-3">
-                Contact
-              </SectionLabel>
-              <SectionHeading className="mb-6">
-                How can we <span className="text-primary">help?</span>
-              </SectionHeading>
-              <p className="mb-3">
-                If you have general inquiries about us and what we do, please
-                fill in the form on the right and we&apos;ll get in touch with
-                you as soon as we can.
-              </p>
-              <p>
-                However, if you already have a project or specific requirements
-                in mind, please let us know <Hyperlink href="">here</Hyperlink>.
-              </p>
-            </FadeOnScroll>
-            <FadeOnScroll className="w-full grow md:max-w-lg">
-              <GeneralContactForm />
-            </FadeOnScroll>
-          </div>
-        </div>
-      </div>
+      <GeneralContact />
     </div>
   );
 }
