@@ -4,7 +4,7 @@ import ContentHeading from "@/components/layout/section/content/content-heading"
 import Button from "@/components/ui/button";
 import { motion } from "motion/react";
 import { AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const projects = [
   {
@@ -30,6 +30,17 @@ const projects = [
 ];
 export default function FeaturedProjectsStack() {
   const [currentProject, setCurrentProject] = useState(0);
+
+  // run the animation every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentProject((prev) =>
+        prev === projects.length - 1 ? 0 : prev + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="flex flex-col md:flex-row gap-9">
@@ -70,7 +81,7 @@ export default function FeaturedProjectsStack() {
                   },
                 }}
                 transition={{
-                  duration: 0.3,
+                  duration: 0.2,
                   ease: "easeInOut",
                   delay: index * 0.1,
                 }}

@@ -10,6 +10,7 @@ export default function Header() {
   return (
     <header>
       <FadeOnScroll
+        direction="down"
         className={clsx(
           "flex justify-between items-center",
           CONTENT_LAYOUT,
