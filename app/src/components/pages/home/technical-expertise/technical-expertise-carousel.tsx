@@ -76,7 +76,7 @@ export default function TechnicalExpertiseCarousel() {
             key={point.title}
             whileHover={{ y: -3 }}
             className={clsx(
-              "h-[25rem] w-xs bg-neutral rounded-md shrink-0 flex flex-col justify-between"
+              "h-[25rem] w-xs bg-white rounded-md shrink-0 flex flex-col justify-between border border-neutral"
             )}
           >
             <div className="p-6">
@@ -88,7 +88,7 @@ export default function TechnicalExpertiseCarousel() {
             </div>
 
             <div
-              className="rounded-md bg-center bg-cover h-[46%]"
+              className="rounded-md bg-center bg-cover h-[43%] m-3"
               style={{
                 backgroundImage: `url('/images/stock/home/technical-expertise/${point.image}')`,
               }}

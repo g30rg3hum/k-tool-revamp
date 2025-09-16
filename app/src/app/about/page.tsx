@@ -5,14 +5,7 @@ import SectionLabel from "@/components/layout/section/section-label";
 import ValuesAccordion from "@/components/pages/about/values/values-accordion";
 import GeneralContact from "@/components/pages/sections/general-contact";
 import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/lib/constants/styles";
-import {
-  BicepsFlexed,
-  EllipsisVertical,
-  Eye,
-  History,
-  MoveDown,
-  Rocket,
-} from "lucide-react";
+import { BicepsFlexed, Eye, History, Rocket } from "lucide-react";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -60,7 +53,7 @@ export default function AboutPage() {
         </FadeOnScroll>
 
         <div className="flex flex-col md:flex-row gap-9">
-          <FadeOnScroll className="bg-neutral md:w-[50%] p-6 rounded-md">
+          <FadeOnScroll className="bg-sky-100 md:w-[50%] p-6 rounded-md border border-neutral">
             <ContentHeading className="mb-3">What drives us</ContentHeading>
             <p>
               Delivering precision engineering solutions with uncompromising
@@ -69,7 +62,7 @@ export default function AboutPage() {
               and decades of expertise.
             </p>
           </FadeOnScroll>
-          <FadeOnScroll className="bg-neutral md:w-[50%] p-6 rounded-md">
+          <FadeOnScroll className="bg-purple-100 md:w-[50%] p-6 rounded-md border border-neutral">
             <ContentHeading className="mb-3">
               Where we&apos;re headed
             </ContentHeading>
@@ -128,7 +121,7 @@ export default function AboutPage() {
         </FadeOnScroll>
 
         <div className="flex flex-col items-center gap-12">
-          <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-neutral rounded-md">
+          <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-white rounded-md border border-neutral p-3">
             <div className="md:w-[50%] p-6 order-1">
               <ContentHeading className="mb-3">
                 Establishment (1990)
@@ -148,7 +141,7 @@ export default function AboutPage() {
               className="h-full w-full md:w-[50%] rounded-md order-2 object-cover min-h-[300px]"
             />
           </FadeOnScroll>
-          <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-neutral rounded-md">
+          <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-white border border-neutral p-3 rounded-md">
             <Image
               src="/images/stock/about/history/2.jpg"
               height={1000}
@@ -169,7 +162,7 @@ export default function AboutPage() {
               </p>
             </div>
           </FadeOnScroll>
-          <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-neutral rounded-md">
+          <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-white border border-neutral p-3 rounded-md">
             <div className="md:w-[50%] p-6">
               <ContentHeading className="mb-3">
                 Sale of division (2023)
@@ -189,7 +182,7 @@ export default function AboutPage() {
               className="h-full w-full object-cover min-h-[300px] md:w-[50%] rounded-md"
             />
           </FadeOnScroll>
-          <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-neutral rounded-md">
+          <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-white border border-neutral p-3 rounded-md">
             <Image
               src="/images/stock/about/history/5.jpg"
               height={1000}
