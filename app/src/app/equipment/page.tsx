@@ -129,9 +129,9 @@ export default function EquipmentPage() {
       </div>
 
       <div className={CONTENT_LAYOUT}>
-        <div className="mb-9">
+        <FadeOnScroll className="mb-9">
           <SectionLabel className="mb-3" icon={Microscope}>
-            Quality assurnace
+            Quality assurance
           </SectionLabel>
           <SectionHeading className="mb-6">
             <span className="text-primary">Maintaining</span> the{" "}
@@ -142,7 +142,7 @@ export default function EquipmentPage() {
             that help us to deliver outputs that are of the highest quality in
             the industry.
           </p>
-        </div>
+        </FadeOnScroll>
         <div className="grid gap-6 lg:grid-cols-2">
           {qualityAssuranceEquipment.map((item, index) => (
             <FadeOnScroll
