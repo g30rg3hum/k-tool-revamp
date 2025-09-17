@@ -82,7 +82,7 @@ export default function QualityAssurancePage() {
       {/* Main section */}
       <div className={CONTENT_LAYOUT}>
         <div className="flex gap-9">
-          <FadeOnScroll className="max-w-lg border sticky top-9 flex-shrink-0 h-max">
+          <FadeOnScroll className="max-w-lg sticky top-9 flex-shrink-0 h-max">
             <SectionLabel icon={Search} className="mb-3">
               Quality assurance
             </SectionLabel>

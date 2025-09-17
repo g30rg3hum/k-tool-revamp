@@ -32,7 +32,7 @@ export default function Accordion({ items, className }: AccordionProps) {
           <div key={index}>
             <button
               onClick={() => toggleItem(index)}
-              className="w-full flex items-center justify-between p-3 text-left border-b cursor-pointer"
+              className="w-full flex items-center justify-between py-3 text-left border-b cursor-pointer"
             >
               <ContentHeading>{item.title}</ContentHeading>
               <motion.div animate={{ rotate: isOpen ? 180 : 0 }}>

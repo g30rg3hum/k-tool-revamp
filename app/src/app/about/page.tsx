@@ -23,7 +23,7 @@ export default function AboutPage() {
               Established for several{" "}
               <span className="text-primary">decades</span>, we have been at the{" "}
               <span className="text-primary">forefront</span> of{" "}
-              <span className="text-primary">tooling innovation</span>.
+              <span className="text-primary">tooling innovation.</span>
             </SectionHeading>
             <p>
               We are an international, leading ISO-certified precision
