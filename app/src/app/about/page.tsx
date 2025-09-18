@@ -28,7 +28,7 @@ export default function AboutPage() {
             <p>
               We are an international, leading ISO-certified precision
               engineering company based in Malaysia. Mr. Tan Hoo Peng founded
-              K-Tool Engineering in 1995, and ever since we have been committed
+              K-Tool Engineering in 1990, and ever since we have been committed
               to delivering high-precision tooling solutions to key sectors of
               the electronics industry. These include semiconductors,
               connectors, stamping parts, and many more.
@@ -165,6 +165,27 @@ export default function AboutPage() {
           <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-white border border-neutral p-3 rounded-md">
             <div className="md:w-[50%] p-6">
               <ContentHeading className="mb-3">
+                Bigger factory (2010)
+              </ContentHeading>
+              <p>
+                Just two years later, we moved into our own 12,000 square foot
+                semi-detached factory in Bayan Lepas — a thriving industrial hub
+                on the island of Penang in Malaysia. This allowed us to expand
+                our production capabilities and better serve our growing client
+                base.
+              </p>
+            </div>
+            <Image
+              src="/images/stock/about/history/3.jpg"
+              height={1000}
+              width={1000}
+              alt="First factory image"
+              className="h-full w-full md:w-[50%] rounded-md object-cover min-h-[300px]"
+            />
+          </FadeOnScroll>
+          <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-white border border-neutral p-3 rounded-md">
+            <div className="md:w-[50%] p-6 order-1 md:order-2">
+              <ContentHeading className="mb-3">
                 Sale of division (2023)
               </ContentHeading>
               <p>
@@ -179,18 +200,11 @@ export default function AboutPage() {
               height={1000}
               width={1000}
               alt="Deal image"
-              className="h-full w-full object-cover min-h-[300px] md:w-[50%] rounded-md"
+              className="h-full w-full object-cover min-h-[300px] md:w-[50%] rounded-md order-2 md:order-1"
             />
           </FadeOnScroll>
           <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-white border border-neutral p-3 rounded-md">
-            <Image
-              src="/images/stock/about/history/5.jpg"
-              height={1000}
-              width={1000}
-              alt="Facility image"
-              className="h-full w-full object-cover min-h-[300px] md:w-[50%] rounded-md order-2 md:order-1"
-            />
-            <div className="md:w-[50%] p-6 order-1 md:order-2">
+            <div className="md:w-[50%] p-6">
               <ContentHeading className="mb-3">
                 An even bigger facility (2025)
               </ContentHeading>
@@ -200,6 +214,13 @@ export default function AboutPage() {
                 as a leader in ultra-precision manufacturing in Malaysia.
               </p>
             </div>
+            <Image
+              src="/images/stock/about/history/5.jpg"
+              height={1000}
+              width={1000}
+              alt="Facility image"
+              className="h-full w-full object-cover min-h-[300px] md:w-[50%] rounded-md"
+            />
           </FadeOnScroll>
         </div>
       </div>

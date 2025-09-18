@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { motion } from "motion/react";
-import Link from "next/link";
 
 interface Props {
   variant: "primary" | "outline" | "neutral" | "dark";
@@ -57,9 +56,9 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className="w-max">
+      <a href={href} className="w-max">
         <motion.button {...motionProps}>{children}</motion.button>
-      </Link>
+      </a>
     );
   }
 

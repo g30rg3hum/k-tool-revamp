@@ -187,17 +187,17 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Featured projects */}
+      {/* Featured work */}
       <div>
         <div className={clsx(CONTENT_LAYOUT)}>
           {/* Content */}
           <div>
             <FadeOnScroll>
               <div className="flex justify-between items-center mb-3 sm:mb-6">
-                <SectionLabel icon={Briefcase}>Featured projects</SectionLabel>
+                <SectionLabel icon={Briefcase}>Featured work</SectionLabel>
                 <div className="hidden sm:block">
                   <Button variant="primary" href="">
-                    View all our projects
+                    View all our work
                   </Button>
                 </div>
               </div>
@@ -205,7 +205,7 @@ export default function Home() {
               <div className="max-w-lg md:max-w-xl mx-auto mb-6 sm:mb-9">
                 <SectionHeading className="text-left sm:text-right mb-6">
                   A <span className="text-primary">glimpse</span> into our{" "}
-                  <span className="text-primary">best work.</span>
+                  <span className="text-primary">best creations.</span>
                 </SectionHeading>
                 <p className="text-left">
                   Some of the projects we&apos;ve worked on and are particularly

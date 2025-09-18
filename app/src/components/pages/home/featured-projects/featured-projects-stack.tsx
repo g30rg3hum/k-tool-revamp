@@ -10,22 +10,22 @@ const projects = [
   {
     title: "Precision tooling for stamping applications",
     description: "[...]",
-    image: "1.jpg",
+    image: "stamping.png",
   },
   {
     title: "High-performance components for semiconductor manufacturing",
     description: "[...]",
-    image: "2.jpg",
+    image: "semiconductor.png",
   },
   {
     title: "High-precision mold inserts for connector and housing production",
     description: "[...]",
-    image: "3.jpg",
+    image: "mold-inserts.png",
   },
   {
     title: "Custom tooling solutions for automotive parts manufacturing",
     description: "[...]",
-    image: "4.jpg",
+    image: "automotive.png",
   },
 ];
 export default function FeaturedProjectsStack() {
@@ -56,9 +56,9 @@ export default function FeaturedProjectsStack() {
             return (
               <motion.div
                 key={`project-${index + 1}-image`}
-                className="rounded-md absolute inset-0 md:inset-3 bg-center bg-cover shadow-sm"
+                className="rounded-md absolute inset-0 md:inset-3 bg-center bg-cover border border-neutral"
                 style={{
-                  backgroundImage: `url('/images/stock/home/featured-projects/${project.image}')`,
+                  backgroundImage: `url('/images/work/${project.image}')`,
                 }}
                 initial={{
                   rotate: `${rotation}${rotationAmount}deg`,

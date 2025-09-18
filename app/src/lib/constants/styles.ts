@@ -9,7 +9,7 @@ export const CONTENT_LAYOUT = `${HORIZONTAL_PADDING} ${MAX_WIDTH} mx-auto`;
 // SECTIONS
 export const SPACE_BETWEEN_SECTIONS = "space-y-15 sm:space-y-18"; // aligns with VERTICAL_PADDING
 // These should be inside <h2>
-export const SECTION_HEADING = "text-xl md:text-2xl lg:text-3xl font-bold";
+export const SECTION_HEADING = "text-2xl md:text-3xl lg:text-4xl font-bold";
 // These should be inside <h3>, gap between label and heading should be 3
 export const SECTION_LABEL = "font-bold";
 // These should be inside <h4>
