@@ -55,9 +55,12 @@ export default function GeneralContactForm() {
       toast.success("Enquiry sent successfully! Please wait for our response.");
       reset();
     } else {
-      toast.error(
-        "Something went wrong. Please contact us directly via email."
-      );
+      let errorMessage =
+        "Something went wrong. Please contact us directly via email.";
+      // Status code 429, rate limit exceeded
+      if (res.status === 429) errorMessage = (await res.json()).error;
+
+      toast.error(errorMessage);
     }
 
     toast.dismiss(toastId);

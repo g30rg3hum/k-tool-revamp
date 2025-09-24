@@ -9,18 +9,18 @@ export default function ContactPage() {
   return (
     <div className={SPACE_BETWEEN_SECTIONS}>
       <div className={CONTENT_LAYOUT}>
-        <FadeOnScroll className="text-center mb-9">
+        <FadeOnScroll className="text-left md:text-center mb-6 md:mb-9">
           <SectionHeading className="mb-3">
             <span className="text-primary">Contact</span> our team
           </SectionHeading>
-          <p>
+          <p className="mb-3">
             Got any general questions about our services or us as a company?
             We&apos;re here to help!
           </p>
           <p>Fill in the form below or reach us directly via other mediums.</p>
         </FadeOnScroll>
-        <div className="flex flex-col lg:flex-row justify-center gap-12 mx-auto">
-          <FadeOnScroll>
+        <div className="flex flex-col lg:flex-row justify-center gap-9 md:gap-12 mx-auto">
+          <FadeOnScroll className="bg-white border p-6 rounded-md border-neutral">
             <GeneralContactForm />
           </FadeOnScroll>
 

@@ -5,7 +5,7 @@ interface Props {
 
 export default function Label({ children, htmlFor }: Props) {
   return (
-    <label className="text-xs font-semibold" htmlFor={htmlFor}>
+    <label className="text-xs font-bold" htmlFor={htmlFor}>
       {children}
     </label>
   );

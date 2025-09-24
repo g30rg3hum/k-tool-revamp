@@ -16,7 +16,7 @@ export default function TextArea({
     <div className="w-full">
       <Label>{label}</Label>
       <textarea
-        className="w-full p-3 text-sm border border-muted rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition duration-300"
+        className="w-full p-3 text-sm border border-black/40 rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition duration-300"
         placeholder={placeholder ?? "Enter your text here..."}
         rows={4}
         {...rest}

@@ -16,6 +16,7 @@
     "lucide-react": "^0.542.0",
     "motion": "^12.23.12",
     "next": "15.5.2",
+    "rate-limiter-flexible": "^7.4.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.62.0",
