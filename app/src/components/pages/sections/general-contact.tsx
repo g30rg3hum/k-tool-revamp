@@ -26,7 +26,8 @@ export default function GeneralContact() {
             </p>
             <p>
               However, if you already have a project or specific requirements in
-              mind, please let us know <Hyperlink href="">here</Hyperlink>.
+              mind, please let us know{" "}
+              <Hyperlink href="/get-quote">here</Hyperlink>.
             </p>
           </FadeOnScroll>
           <FadeOnScroll className="w-full grow md:max-w-lg">

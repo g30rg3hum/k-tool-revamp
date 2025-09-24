@@ -53,7 +53,7 @@ export default function AboutPage() {
         </FadeOnScroll>
 
         <div className="flex flex-col md:flex-row gap-9">
-          <FadeOnScroll className="bg-sky-100 md:w-[50%] p-6 rounded-md border border-neutral">
+          <FadeOnScroll className="bg-white md:w-[50%] p-6 rounded-md border border-neutral">
             <ContentHeading className="mb-3">What drives us</ContentHeading>
             <p>
               Delivering precision engineering solutions with uncompromising
@@ -62,7 +62,7 @@ export default function AboutPage() {
               and decades of expertise.
             </p>
           </FadeOnScroll>
-          <FadeOnScroll className="bg-purple-100 md:w-[50%] p-6 rounded-md border border-neutral">
+          <FadeOnScroll className="bg-white md:w-[50%] p-6 rounded-md border border-neutral">
             <ContentHeading className="mb-3">
               Where we&apos;re headed
             </ContentHeading>

@@ -9,6 +9,7 @@ type Direction = "left" | "right";
 export default function HeroCarousel() {
   const [currentImage, setCurrentImage] = useState(1);
   const [direction, setDirection] = useState<Direction>("right");
+  const [timerKey, setTimerKey] = useState(0);
   const maxImages = 3;
 
   const buttonVariants = {
@@ -39,7 +40,7 @@ export default function HeroCarousel() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [maxImages]);
+  }, [maxImages, timerKey]);
 
   return (
     <motion.div
@@ -69,6 +70,7 @@ export default function HeroCarousel() {
           onClick={() => {
             setDirection("left");
             setCurrentImage((prev) => (prev === 1 ? maxImages : prev - 1));
+            setTimerKey((prev) => prev + 1);
           }}
           variant="neutral"
         >
@@ -85,6 +87,7 @@ export default function HeroCarousel() {
           onClick={() => {
             setDirection("right");
             setCurrentImage((prev) => (prev === maxImages ? 1 : prev + 1));
+            setTimerKey((prev) => prev + 1);
           }}
           variant="neutral"
         >

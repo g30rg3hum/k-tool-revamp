@@ -30,17 +30,17 @@ const projects = [
 ];
 export default function FeaturedProjectsStack() {
   const [currentProject, setCurrentProject] = useState(0);
+  const [timerKey, setTimerKey] = useState(0);
 
-  // run the animation every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentProject((prev) =>
         prev === projects.length - 1 ? 0 : prev + 1
       );
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [timerKey]); // Resets the useEffect when switching projects.
 
   return (
     <div className="flex flex-col md:flex-row gap-9">
@@ -103,7 +103,10 @@ export default function FeaturedProjectsStack() {
               <Button
                 key={`project-${index + 1}-button`}
                 variant={index === currentProject ? "primary" : "neutral"}
-                onClick={() => setCurrentProject(index)}
+                onClick={() => {
+                  setCurrentProject(index);
+                  setTimerKey((prev) => prev + 1);
+                }}
                 size="sm"
                 square
               >

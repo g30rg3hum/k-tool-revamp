@@ -22,6 +22,7 @@ import TechnicalExpertiseCarousel from "@/components/pages/home/technical-expert
 import FeaturedProjectsStack from "@/components/pages/home/featured-projects/featured-projects-stack";
 import FadeOnScroll from "@/components/animations/fade-on-scroll";
 import GeneralContact from "@/components/pages/sections/general-contact";
+import GlobalOutreachMap from "@/components/pages/home/global-outreach/global-outreach-map";
 
 const reasonsToChooseUs = [
   {
@@ -173,7 +174,7 @@ export default function Home() {
                 your challenging designs into perfect parts, fast.
               </p>
               <div className="w-max">
-                <Button variant="primary" href="">
+                <Button variant="primary" href="/expertise">
                   Learn more
                 </Button>
               </div>
@@ -196,13 +197,13 @@ export default function Home() {
               <div className="flex justify-between items-center mb-3 sm:mb-6">
                 <SectionLabel icon={Briefcase}>Featured work</SectionLabel>
                 <div className="hidden sm:block">
-                  <Button variant="primary" href="">
+                  <Button variant="primary" href="/work">
                     View all our work
                   </Button>
                 </div>
               </div>
 
-              <div className="max-w-lg md:max-w-xl mx-auto mb-6 sm:mb-9">
+              <div className="sm:max-w-lg md:max-w-2xl mx-auto mb-6 sm:mb-9">
                 <SectionHeading className="text-left sm:text-right mb-6">
                   A <span className="text-primary">glimpse</span> into our{" "}
                   <span className="text-primary">best creations.</span>
@@ -215,8 +216,8 @@ export default function Home() {
               </div>
 
               <div className="block mb-9 sm:hidden sm:mb-0">
-                <Button variant="primary" href="">
-                  View all our projects
+                <Button variant="primary" href="/work">
+                  View all our work
                 </Button>
               </div>
             </FadeOnScroll>
@@ -245,7 +246,7 @@ export default function Home() {
                   in the industry.
                 </SectionHeading>
               </div>
-              <Button widthWrap variant="primary" href="">
+              <Button widthWrap variant="primary" href="/about">
                 More about us
               </Button>
             </FadeOnScroll>
@@ -271,14 +272,8 @@ export default function Home() {
             <SectionLabel icon={Globe} className="mb-3">
               Global outreach
             </SectionLabel>
-            <div className="relative mx-auto mb-3 flex justify-center">
-              <Image
-                src="/images/countries.svg"
-                alt="Map with countries we serve"
-                width={800}
-                height={800}
-              />
-              <div className="absolute bottom-0 left-0 right-0 h-30 md:h-60 lg:h-80 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+            <div className="mx-auto mb-6 flex justify-center">
+              <GlobalOutreachMap />
             </div>
           </FadeOnScroll>
 

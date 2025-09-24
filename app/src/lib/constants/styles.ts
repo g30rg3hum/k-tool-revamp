@@ -1,7 +1,7 @@
 // All spacing should be in multiples of 3
 
 // SPACING AND LAYOUT
-export const VERTICAL_PADDING = "py-15 sm:py-18";
+export const VERTICAL_PADDING = "py-12";
 export const HORIZONTAL_PADDING = "px-6 sm:px-9";
 export const MAX_WIDTH = "max-w-7xl";
 export const CONTENT_LAYOUT = `${HORIZONTAL_PADDING} ${MAX_WIDTH} mx-auto`;
