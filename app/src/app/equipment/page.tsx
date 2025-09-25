@@ -29,7 +29,7 @@ const mainEquipment = [
   },
   {
     heading: (
-      <ContentHeading className="mb-6">CNC machining center</ContentHeading>
+      <ContentHeading className="mb-3">CNC machining center</ContentHeading>
     ),
     description:
       "Produces complex components with high accuracy and repeatability. They can handle intricate geometries, tight tolerances, and various materials, completing jobs to exact specifications.",
@@ -37,14 +37,14 @@ const mainEquipment = [
     imageAlt: "CNC machining center",
   },
   {
-    heading: <ContentHeading className="mb-6">Wire EDM</ContentHeading>,
+    heading: <ContentHeading className="mb-3">Wire EDM</ContentHeading>,
     description:
       "Cuts extremely precise profiles with fine surface finishing. They can achieve fine tolerances on hard materials and complex geometries that conventional methods struggle with.",
     image: "/images/equipment/wire-edm.png",
     imageAlt: "Wire EDM",
   },
   {
-    heading: <ContentHeading className="mb-6">Sinker EDM</ContentHeading>,
+    heading: <ContentHeading className="mb-3">Sinker EDM</ContentHeading>,
     description:
       "High-productivity machines that deliver precise, detailed cavity machining in hardened materials— ideal for producing complex dies and components with exceptional accuracy and surface finish.",
     image: "/images/equipment/sinker-edm.png",

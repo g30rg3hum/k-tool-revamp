@@ -53,7 +53,7 @@ export default function Footer() {
                 © 2025 K-Tool Engineering.
                 <br /> All rights reserved.
               </p>
-              <h1 className="self-end bottom-0 right-0 text-[5rem] sm:text-[7rem] lg:text-[10rem] leading-none font-logo m-0 p-0">
+              <h1 className="self-end bottom-0 right-0 text-[5rem] sm:text-[7rem] lg:text-[10rem] leading-none font-logo m-0 p-0 opacity-20">
                 K-TOOL
               </h1>
             </div>

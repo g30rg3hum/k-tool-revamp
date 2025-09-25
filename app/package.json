@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.896.0",
     "@hookform/resolvers": "^5.2.1",
     "@react-email/render": "^1.2.3",
     "@uidotdev/usehooks": "^2.4.1",

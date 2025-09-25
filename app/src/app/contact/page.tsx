@@ -31,7 +31,7 @@ export default function ContactPage() {
                 Send an email directly at your own convenience.
               </p>
               <p>
-                <Mail className="inline-block mr-2" size={20} />{" "}
+                <Mail className="inline-block mr-2 text-primary" size={20} />{" "}
                 <span className="underline">contact@ktool.com</span>
               </p>
             </div>
@@ -41,7 +41,7 @@ export default function ContactPage() {
                 Call our team Mon-Fri, 9am - 5pm UTC+8.
               </p>
               <p>
-                <Phone className="inline-block mr-2" size={20} />{" "}
+                <Phone className="inline-block mr-2 text-primary" size={20} />{" "}
                 <span className="underline">+604 645 1518</span>
               </p>
             </div>
@@ -49,7 +49,7 @@ export default function ContactPage() {
               <ContentHeading className="mb-3">Visit us</ContentHeading>
               <p className="text-muted mb-3">Chat to us in person at our HQ.</p>
               <div className="flex">
-                <MapPin className="inline-block mr-2" size={20} />
+                <MapPin className="inline-block mr-2 text-primary" size={20} />
                 <div className="underline">
                   <p>Plot 159, Jalan Sungai Kluang</p>
                   <p>Bayan Lepas Phase 1 FTZ</p>

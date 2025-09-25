@@ -1,27 +1,45 @@
 "use client";
 
 import {
+  BODY_MAX_LENGTH,
+  EMAIL_ADDRESS_MAX_LENGTH,
   EMAIL_REGEX,
   INVALID_EMAIL_MESSAGE,
+  NAME_MAX_LENGTH,
   REQUIRED_MESSAGE,
+  SUBJECT_MAX_LENGTH,
+  TOO_LONG_MESSAGE,
 } from "@/lib/constants/form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import TextInput from "@/components/ui/form/text-input";
+import Input from "@/components/ui/form/input";
 import TextArea from "@/components/ui/form/text-area";
 import Button from "@/components/ui/button";
 
 const schema = yup.object({
-  firstName: yup.string().required(REQUIRED_MESSAGE),
-  lastName: yup.string().required(REQUIRED_MESSAGE),
+  firstName: yup
+    .string()
+    .required(REQUIRED_MESSAGE)
+    .max(NAME_MAX_LENGTH, TOO_LONG_MESSAGE(NAME_MAX_LENGTH)),
+  lastName: yup
+    .string()
+    .required(REQUIRED_MESSAGE)
+    .max(NAME_MAX_LENGTH, TOO_LONG_MESSAGE(NAME_MAX_LENGTH)),
   email: yup
     .string()
     .matches(EMAIL_REGEX, { message: INVALID_EMAIL_MESSAGE })
-    .required(REQUIRED_MESSAGE),
-  subject: yup.string().required(REQUIRED_MESSAGE),
-  message: yup.string().required(REQUIRED_MESSAGE),
+    .required(REQUIRED_MESSAGE)
+    .max(EMAIL_ADDRESS_MAX_LENGTH, TOO_LONG_MESSAGE(EMAIL_ADDRESS_MAX_LENGTH)),
+  subject: yup
+    .string()
+    .required(REQUIRED_MESSAGE)
+    .max(SUBJECT_MAX_LENGTH, TOO_LONG_MESSAGE(SUBJECT_MAX_LENGTH)),
+  message: yup
+    .string()
+    .required(REQUIRED_MESSAGE)
+    .max(BODY_MAX_LENGTH, TOO_LONG_MESSAGE(BODY_MAX_LENGTH)),
 });
 
 export default function GeneralContactForm() {
@@ -69,26 +87,26 @@ export default function GeneralContactForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
       <div className="flex gap-3">
-        <TextInput
+        <Input
           label="First name"
           placeholder="John"
           {...register("firstName")}
           error={errors.firstName?.message}
         />
-        <TextInput
+        <Input
           label="Last name"
           placeholder="Doe"
           {...register("lastName")}
           error={errors.lastName?.message}
         />
       </div>
-      <TextInput
+      <Input
         label="Email address"
         placeholder="john.doe@gmail.com"
         {...register("email")}
         error={errors.email?.message}
       />
-      <TextInput
+      <Input
         label="Subject"
         placeholder="Enquiry about ..."
         {...register("subject")}
