@@ -5,6 +5,8 @@ import { MoveLeft, MoveRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
+const images = ["2.jpeg", "1.jpeg", "3.jpg"];
+
 type Direction = "left" | "right";
 export default function HeroCarousel() {
   const [currentImage, setCurrentImage] = useState(1);
@@ -58,7 +60,7 @@ export default function HeroCarousel() {
           transition={{ duration: 0.3 }}
           className="absolute inset-0 bg-cover bg-center rounded-md"
           style={{
-            backgroundImage: `url('/images/stock/home/hero/${currentImage}.jpg')`,
+            backgroundImage: `url('/images/stock/home/hero/${images[currentImage - 1]}')`,
           }}
         />
       </AnimatePresence>

@@ -22,11 +22,11 @@ const projects = [
     description: "[...]",
     image: "mold-inserts.png",
   },
-  {
-    title: "Custom-designed jigs & fixtures built to your specifications",
-    description: "[...]",
-    image: "automotive.png",
-  },
+  // {
+  //   title: "Custom-designed jigs & fixtures built to your specifications",
+  //   description: "[...]",
+  //   image: "automotive.png",
+  // },
 ];
 export default function FeaturedProjectsStack() {
   const [currentProject, setCurrentProject] = useState(0);
