@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, BadgeCheck, Layers } from "lucide-react";
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import Button from "@/components/ui/button";
+import FadeOnScroll from "@/components/animations/fade-on-scroll";
 
 const stampingImages = [
   {
@@ -41,7 +42,7 @@ export default function WorkPage() {
     <div className={SPACE_BETWEEN_SECTIONS}>
       <div className={CONTENT_LAYOUT}>
         <div className="flex flex-col lg:flex-row mb-6">
-          <div className="lg:max-w-[35rem] xl:max-w-[40rem] relative">
+          <FadeOnScroll className="lg:max-w-[35rem] xl:max-w-[40rem] relative">
             <div className="absolute top-0 right-0 flex lg:hidden gap-6">
               <Button variant="neutral" size="sm">
                 <ArrowLeft size={18} />
@@ -109,9 +110,9 @@ export default function WorkPage() {
                 </li>
               </ul>
             </div>
-          </div>
+          </FadeOnScroll>
 
-          <div className="grow-1 relative min-h-[500px]">
+          <FadeOnScroll className="grow-1 relative min-h-[500px]">
             {stampingImages.map((image, index) => (
               <motion.div
                 key={image.file}
@@ -138,16 +139,16 @@ export default function WorkPage() {
               alt="Shadow"
               className="opacity-30 rotate-2 absolute -bottom-10"
             />
-          </div>
+          </FadeOnScroll>
         </div>
-        <div className="gap-9 w-max mx-auto lg:flex hidden">
+        <FadeOnScroll className="gap-9 w-max mx-auto lg:flex hidden">
           <Button variant="neutral">
             <ArrowLeft />
           </Button>
           <Button variant="neutral">
             <ArrowRight />
           </Button>
-        </div>
+        </FadeOnScroll>
       </div>
       <GeneralContact />
     </div>
