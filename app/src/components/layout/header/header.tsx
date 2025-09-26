@@ -41,7 +41,7 @@ export default function Header() {
         )}
       >
         <FadeOnScroll direction="down">
-          <h1 className="font-logo text-4xl">K-TOOL</h1>
+          <h1 className="font-logo text-4xl text-primary">K-TOOL</h1>
         </FadeOnScroll>
 
         {/* Desktop navigation */}
