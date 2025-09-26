@@ -118,7 +118,7 @@ export default function WorkPage() {
                 key={image.file}
                 animate={{ translateY: [0, -10, 0] }}
                 transition={{
-                  duration: 5 + index * (index % 2 === 0 ? -1 : 1),
+                  duration: 5 + 1 * (index % 2 === 0 ? -1 : 1),
                   repeat: Infinity,
                 }}
                 className={`absolute ${image.position}`}
