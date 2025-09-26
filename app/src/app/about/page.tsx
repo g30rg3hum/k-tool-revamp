@@ -198,7 +198,7 @@ export default function AboutPage() {
               height={1000}
               width={1000}
               alt="Deal image"
-              className="h-full w-full object-cover min-h-[300px] md:w-[50%] rounded-md order-2 md:order-1"
+              className="w-full md:w-[50%] rounded-md order-2 md:order-1 px-9"
             />
           </FadeOnScroll>
           <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-white border border-neutral p-3 rounded-md">
