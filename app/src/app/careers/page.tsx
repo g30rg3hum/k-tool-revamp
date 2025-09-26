@@ -92,7 +92,7 @@ export default function CareersPage() {
   return (
     <div className={SPACE_BETWEEN_SECTIONS}>
       <div className={CONTENT_LAYOUT}>
-        <div className="flex flex-col gap-6 md:gap-9 md:flex-row">
+        <div className="flex flex-col gap-9 md:flex-row">
           <FadeOnScroll className="md:max-w-[35%]">
             <SectionLabel className="mb-3" icon={Briefcase}>
               Careers
@@ -152,7 +152,7 @@ export default function CareersPage() {
         </FadeOnScroll>
       </div>
 
-      <div className={CONTENT_LAYOUT} id="available-positions">
+      <FadeOnScroll className={CONTENT_LAYOUT} id="available-positions">
         <div>
           <SectionLabel className="mb-3" icon={BookOpen}>
             Available positions
@@ -191,7 +191,7 @@ export default function CareersPage() {
             />
           )}
         </div>
-      </div>
+      </FadeOnScroll>
 
       <GeneralContact />
     </div>
