@@ -13,8 +13,8 @@ export default function AboutPage() {
     <div className={SPACE_BETWEEN_SECTIONS}>
       {/* Overview */}
       <FadeOnScroll className={CONTENT_LAYOUT}>
-        <div className="flex flex-col lg:flex-row gap-9 justify-between">
-          <div className="lg:w-[50%] flex flex-col">
+        <div className="flex flex-col md:flex-row gap-9 justify-between">
+          <div className="md:w-[60%] flex flex-col">
             <SectionLabel className="mb-3" icon={Eye}>
               Overview
             </SectionLabel>
@@ -35,11 +35,11 @@ export default function AboutPage() {
             </p>
           </div>
           <Image
-            src="/images/stock/about/overview/1.jpg"
+            src="/images/stock/about/overview/1.png"
             width={1000}
             height={0}
             alt="Company image"
-            className="rounded-md lg:w-[50%] lg:max-w-[27rem] h-max self-center"
+            className="rounded-md md:w-[40%] max-w-[30rem] md:max-w-[20rem] h-max self-center object-cover"
           />
         </div>
       </FadeOnScroll>
