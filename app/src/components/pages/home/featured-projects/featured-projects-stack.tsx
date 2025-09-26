@@ -23,7 +23,7 @@ const projects = [
     image: "mold-inserts.png",
   },
   {
-    title: "Custom tooling solutions for automotive parts manufacturing",
+    title: "Custom-designed jigs & fixtures built to your specifications",
     description: "[...]",
     image: "automotive.png",
   },

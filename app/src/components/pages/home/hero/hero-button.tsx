@@ -11,7 +11,7 @@ export default function HeroButton() {
       const elementPosition = element.getBoundingClientRect().top;
       console.log(elementPosition);
       console.log(window.pageYOffset);
-      const offsetPosition = elementPosition + window.pageYOffset - 50;
+      const offsetPosition = elementPosition + window.pageYOffset - 170;
 
       window.scrollTo({
         top: offsetPosition,

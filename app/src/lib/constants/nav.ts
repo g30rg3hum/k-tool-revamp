@@ -4,4 +4,5 @@ export const mainPages = [
   { href: "/work", title: "Work" },
   { href: "/equipment", title: "Equipment" },
   { href: "/quality-assurance", title: "Quality" },
+  { href: "/careers", title: "Careers" },
 ];

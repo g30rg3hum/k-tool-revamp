@@ -72,7 +72,7 @@ const qualityAssuranceEquipment = [
       <div className="flex items-center gap-3 mb-6 flex-wrap">
         <ContentHeading>Multisensor measurement system</ContentHeading>
         <span className="bg-primary text-background font-bold px-3 py-1 rounded-md text-sm">
-          LM-X100TL
+          [KEYENCE] LM-X100TL
         </span>
       </div>
     ),

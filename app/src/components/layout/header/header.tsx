@@ -47,7 +47,7 @@ export default function Header() {
         {/* Desktop navigation */}
         <FadeOnScroll direction="down">
           <nav className="hidden lg:block">
-            <ul className="font-bold flex gap-6">
+            <ul className="font-bold flex gap-5 xl:gap-6">
               {mainPages.map((page) => (
                 <DesktopLinkListItem
                   key={`desktop:${page.href}`}
@@ -63,7 +63,7 @@ export default function Header() {
         <FadeOnScroll direction="down">
           <div className="gap-6 hidden lg:flex">
             <Button variant="primary" href="/get-quote">
-              Get instant quote
+              Get quote
             </Button>
             <Button variant="outline" href="/contact">
               Contact us

@@ -107,7 +107,7 @@ export default function AboutPage() {
             History
           </SectionLabel>
           <div className="md:text-center md:mx-auto flex flex-col items-center mb-9">
-            <SectionHeading className="mb-6 w-full md:max-w-lg">
+            <SectionHeading className="mb-6 w-full md:max-w-xl">
               We have made{" "}
               <span className="text-primary">significant improvements</span>{" "}
               since our founding.

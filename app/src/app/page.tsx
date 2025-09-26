@@ -174,7 +174,7 @@ export default function Home() {
                 your challenging designs into perfect parts, fast.
               </p>
               <div className="w-max">
-                <Button variant="primary" href="/expertise">
+                <Button variant="primary" href="/work">
                   Learn more
                 </Button>
               </div>

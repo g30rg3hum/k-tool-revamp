@@ -46,7 +46,7 @@ export default function HeroCarousel() {
     <motion.div
       whileHover="whileHover"
       initial="initial"
-      className="relative flex-1 w-full rounded-md"
+      className="relative flex-1 w-full rounded-md min-h-[400px]"
     >
       <AnimatePresence mode="popLayout" custom={direction}>
         <motion.div
