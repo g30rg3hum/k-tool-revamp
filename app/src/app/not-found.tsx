@@ -1,7 +1,7 @@
 import SectionHeading from "@/components/layout/section/section-heading";
 import { CONTENT_LAYOUT } from "@/lib/constants/styles";
 import clsx from "clsx";
-import { Bomb, X } from "lucide-react";
+import { X } from "lucide-react";
 
 export default function NotFound() {
   return (
