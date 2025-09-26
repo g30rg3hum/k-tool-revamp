@@ -28,7 +28,7 @@ export default function AboutPage() {
             <p>
               We are an international, leading ISO-certified precision
               engineering company based in Malaysia. Mr. Tan Hoo Peng founded
-              K-Tool Engineering in 1990, and ever since we have been committed
+              K-Tool Engineering in 1995, and ever since we have been committed
               to delivering high-precision tooling solutions to key sectors of
               the electronics industry. These include semiconductors,
               connectors, stamping parts, and many more.
@@ -124,7 +124,7 @@ export default function AboutPage() {
           <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-white rounded-md border border-neutral p-3">
             <div className="md:w-[50%] p-6 order-1">
               <ContentHeading className="mb-3">
-                Establishment (1990)
+                Establishment (1995)
               </ContentHeading>
               <p>
                 We began as a small, humble workshop in a rented space,
@@ -151,7 +151,7 @@ export default function AboutPage() {
             />
             <div className="md:w-[50%] p-6 order-1 md:order-2">
               <ContentHeading className="mb-3">
-                First factory (1992)
+                First factory (1997)
               </ContentHeading>
               <p>
                 Just two years later, we moved into our own 12,000 square foot
@@ -168,11 +168,9 @@ export default function AboutPage() {
                 Bigger factory (2010)
               </ContentHeading>
               <p>
-                Just two years later, we moved into our own 12,000 square foot
-                semi-detached factory in Bayan Lepas — a thriving industrial hub
-                on the island of Penang in Malaysia. This allowed us to expand
-                our production capabilities and better serve our growing client
-                base.
+                After seeing continued success from our first factory, we
+                expanded into an advanced 28,000 square foot facility, also in
+                Bayan Lepas, to support our continued growth and innovation.
               </p>
             </div>
             <Image
