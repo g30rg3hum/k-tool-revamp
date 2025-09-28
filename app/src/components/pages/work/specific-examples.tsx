@@ -28,10 +28,10 @@ const stampingImages = [
 
 const exampleImages = [
   {
-    width: 220,
+    width: 240,
     file: "1.png",
     position:
-      "top-[40%] left-[24%] sm:left-[35%] md:left-[37%] lg:left-[30%] rotate-4",
+      "top-[40%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-4",
   },
 ];
 
