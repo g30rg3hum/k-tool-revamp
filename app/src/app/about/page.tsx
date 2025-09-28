@@ -8,6 +8,12 @@ import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/lib/constants/styles";
 import { BicepsFlexed, Eye, History, Rocket } from "lucide-react";
 import Image from "next/image";
 
+export const metadata = {
+  title: "About Us | K-Tool Engineering",
+  description:
+    "Learn about K-Tool Engineering's mission, vision, values, and history as a leading, international precision engineering company.",
+};
+
 export default function AboutPage() {
   return (
     <div className={SPACE_BETWEEN_SECTIONS}>

@@ -4,6 +4,13 @@ import SectionHeading from "@/components/layout/section/section-heading";
 import GeneralContactForm from "@/components/pages/contact/general-contact-form";
 import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/lib/constants/styles";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us | K-Tool Engineering",
+  description:
+    "Get in touch with K-Tool Engineering for inquiries about our precision engineering services, quotes, or general questions. We're here to help!",
+};
 
 export default function ContactPage() {
   return (

@@ -5,7 +5,14 @@ import SectionLabel from "@/components/layout/section/section-label";
 import GeneralContact from "@/components/pages/sections/general-contact";
 import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/lib/constants/styles";
 import { Anvil, Axe, Microscope } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Equipment | K-Tool Engineering",
+  description:
+    "Discover the advanced machinery and precision tools at K-Tool Engineering that ensure top-quality results for your precise engineering needs.",
+};
 
 const mainEquipment = [
   {

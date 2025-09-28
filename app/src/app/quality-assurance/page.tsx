@@ -5,7 +5,14 @@ import SectionLabel from "@/components/layout/section/section-label";
 import GeneralContact from "@/components/pages/sections/general-contact";
 import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/lib/constants/styles";
 import { Search } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Quality Assurance | K-Tool Engineering",
+  description:
+    "Discover K-Tool Engineering's rigorous quality assurance processes that ensure precision, accuracy, and reliability at every stage of manufacturing.",
+};
 
 const content = [
   {

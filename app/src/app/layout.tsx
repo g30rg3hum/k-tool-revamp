@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    images: "/images/social-banner.png",
+    images: ["/images/social-banner.png"],
     url: "https://ktoolengineering.com",
     type: "website",
   },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: "/images/social-banner.png",
+    images: ["/images/social-banner.png"],
   },
 };
 

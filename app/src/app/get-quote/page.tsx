@@ -5,6 +5,13 @@ import GetQuoteForm from "@/components/pages/get-quote/get-quote-form";
 import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/lib/constants/styles";
 import clsx from "clsx";
 import { Eye, MessagesSquare, Package, Play, Quote, Send } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Get a Quote | K-Tool Engineering",
+  description:
+    "Request a quote for your precision engineering project from K-Tool Engineering. Provide your project details and receive a competitive quotation within 24 hours.",
+};
 
 const steps = [
   {
