@@ -19,10 +19,10 @@ export default function HeroCarousel() {
     whileHover: { opacity: 0.6 },
   };
 
-  const slideAmount = 20;
+  const slideAmount = 69;
   const slideVariants = {
     initial: (direction: Direction) => ({
-      x: direction === "right" ? slideAmount : -slideAmount,
+      x: direction === "right" ? -slideAmount : slideAmount,
       opacity: 0,
     }),
     animate: {
@@ -30,7 +30,7 @@ export default function HeroCarousel() {
       opacity: 1,
     },
     exit: (direction: Direction) => ({
-      x: direction === "right" ? -slideAmount : slideAmount,
+      x: direction === "right" ? slideAmount : -slideAmount,
       opacity: 0,
     }),
   };
@@ -57,6 +57,7 @@ export default function HeroCarousel() {
           initial="initial"
           animate="animate"
           exit="exit"
+          custom={direction}
           transition={{ duration: 0.3 }}
           className="absolute inset-0 bg-cover bg-center rounded-md"
           style={{

@@ -7,13 +7,13 @@ interface Props {
 }
 export default function Hyperlink({ href, children, out }: Props) {
   return (
-    <Link
+    <a
       className="text-primary underline"
       href={href}
       target={out ? "_blank" : undefined}
       rel={out ? "noreferrer" : undefined}
     >
       {children}
-    </Link>
+    </a>
   );
 }

@@ -38,7 +38,7 @@ const values = [
   {
     title: "Continuous learning",
     description:
-      "Technology evolves, and so do we. We value curiousity, invest in training, and encourage mastering new skills and techniques.",
+      "Technology evolves, and so do we. We value curiousity and invest in growth.",
   },
   {
     title: "Team first",
