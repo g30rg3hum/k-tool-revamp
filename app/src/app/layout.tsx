@@ -29,6 +29,7 @@ const title = "K-Tool Engineering | Precision Engineering";
 const description =
   "Precision engineering firm providing high-quality tooling solutions for various industries across the globe.";
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ktoolengineering.com"),
   title,
   description,
   openGraph: {
