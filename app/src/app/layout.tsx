@@ -8,7 +8,6 @@ import "./globals.css";
 import Header from "@/components/layout/header/header";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/layout/footer/footer";
-import Head from "next/head";
 
 const logoFont = Special_Gothic_Expanded_One({
   variable: "--font-logo",
@@ -26,10 +25,25 @@ const serif = Montagu_Slab({
   subsets: ["latin"],
 });
 
+const title = "K-Tool Engineering | Precision Engineering";
+const description =
+  "Precision engineering firm providing high-quality tooling solutions for various industries across the globe.";
 export const metadata: Metadata = {
-  title: "K-Tool Engineering | Precision Engineering",
-  description:
-    "Precision engineering firm providing high-quality tooling solutions for various industries across the globe.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    images: "/images/social-banner.png",
+    url: "https://ktoolengineering.com",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: "/images/social-banner.png",
+  },
 };
 
 export default function RootLayout({
