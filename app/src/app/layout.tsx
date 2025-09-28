@@ -9,6 +9,7 @@ import Header from "@/components/layout/header/header";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/layout/footer/footer";
 import { Analytics } from "@vercel/analytics/next";
+import { Organization, WithContext } from "schema-dts";
 
 const logoFont = Special_Gothic_Expanded_One({
   variable: "--font-logo",
@@ -48,6 +49,31 @@ export const metadata: Metadata = {
   },
 };
 
+const structuredData: WithContext<Organization> = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "K-Tool Engineering",
+  description: description,
+  url: "https://ktoolengineering.com",
+  logo: "https://ktoolengineering.com/images/logo.png",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Customer service",
+    telephone: "+604-645-1518",
+    email: "sales@ktoolengineering.com",
+    areaServed: "MY",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "No. 8, Lintang Beringin, Beechwood Light Industrial",
+    addressLocality: "Batu Maung",
+    addressRegion: "Penang",
+    postalCode: "11900",
+    addressCountry: "Malaysia",
+  },
+  areaServed: "MY",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -55,6 +81,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       <body
         className={`${logoFont.variable} ${sans.variable} ${serif.variable} antialiased font-medium`}
       >

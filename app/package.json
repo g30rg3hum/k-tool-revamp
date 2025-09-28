@@ -24,6 +24,7 @@
     "react-hook-form": "^7.62.0",
     "react-hot-toast": "^2.6.0",
     "resend": "^6.0.3",
+    "schema-dts": "^1.1.5",
     "yup": "^1.7.0"
   },
   "devDependencies": {
