@@ -8,6 +8,7 @@ import "./globals.css";
 import Header from "@/components/layout/header/header";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/layout/footer/footer";
+import Head from "next/head";
 
 const logoFont = Special_Gothic_Expanded_One({
   variable: "--font-logo",
@@ -26,9 +27,9 @@ const serif = Montagu_Slab({
 });
 
 export const metadata: Metadata = {
-  title: "K-Tool Engineering",
+  title: "K-Tool Engineering | Precision Engineering",
   description:
-    "Precision engineering firm located in Malaysia, supplying high-precision tooling to various industries across the globe.",
+    "Precision engineering firm providing high-quality tooling solutions for various industries across the globe.",
 };
 
 export default function RootLayout({
