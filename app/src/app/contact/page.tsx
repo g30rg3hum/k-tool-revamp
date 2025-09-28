@@ -32,7 +32,7 @@ export default function ContactPage() {
               </p>
               <p>
                 <Mail className="inline-block mr-2 text-primary" size={20} />{" "}
-                <span className="underline">contact@ktool.com</span>
+                <span className="underline">contact@ktoolengineering.com</span>
               </p>
             </div>
             <div>

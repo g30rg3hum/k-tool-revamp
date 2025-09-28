@@ -9,7 +9,6 @@ import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/lib/constants/styles";
 import clsx from "clsx";
 import { BookOpen, Briefcase, Rose, SquareArrowOutUpRight } from "lucide-react";
 import Image from "next/image";
-import { title } from "process";
 
 const gridImages = [
   {

@@ -13,8 +13,8 @@ export default function AboutPage() {
     <div className={SPACE_BETWEEN_SECTIONS}>
       {/* Overview */}
       <FadeOnScroll className={CONTENT_LAYOUT}>
-        <div className="flex flex-col lg:flex-row gap-9 justify-between">
-          <div className="lg:w-[50%] flex flex-col">
+        <div className="flex flex-col md:flex-row gap-9 justify-between">
+          <div className="md:w-[60%] flex flex-col">
             <SectionLabel className="mb-3" icon={Eye}>
               Overview
             </SectionLabel>
@@ -28,18 +28,18 @@ export default function AboutPage() {
             <p>
               We are an international, leading ISO-certified precision
               engineering company based in Malaysia. Mr. Tan Hoo Peng founded
-              K-Tool Engineering in 1990, and ever since we have been committed
+              K-Tool Engineering in 1995, and ever since we have been committed
               to delivering high-precision tooling solutions to key sectors of
               the electronics industry. These include semiconductors,
               connectors, stamping parts, and many more.
             </p>
           </div>
           <Image
-            src="/images/stock/about/overview/1.jpg"
+            src="/images/stock/about/overview/1.png"
             width={1000}
             height={0}
             alt="Company image"
-            className="rounded-md lg:w-[50%] lg:max-w-[27rem] h-max self-center"
+            className="rounded-md md:w-[40%] max-w-[30rem] md:max-w-[20rem] h-max self-center object-cover"
           />
         </div>
       </FadeOnScroll>
@@ -124,7 +124,7 @@ export default function AboutPage() {
           <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-white rounded-md border border-neutral p-3">
             <div className="md:w-[50%] p-6 order-1">
               <ContentHeading className="mb-3">
-                Establishment (1990)
+                Establishment (1995)
               </ContentHeading>
               <p>
                 We began as a small, humble workshop in a rented space,
@@ -151,7 +151,7 @@ export default function AboutPage() {
             />
             <div className="md:w-[50%] p-6 order-1 md:order-2">
               <ContentHeading className="mb-3">
-                First factory (1992)
+                First factory (1997)
               </ContentHeading>
               <p>
                 Just two years later, we moved into our own 12,000 square foot
@@ -168,11 +168,9 @@ export default function AboutPage() {
                 Bigger factory (2010)
               </ContentHeading>
               <p>
-                Just two years later, we moved into our own 12,000 square foot
-                semi-detached factory in Bayan Lepas — a thriving industrial hub
-                on the island of Penang in Malaysia. This allowed us to expand
-                our production capabilities and better serve our growing client
-                base.
+                After seeing continued success from our first factory, we
+                expanded into an advanced 28,000 square foot facility, also in
+                Bayan Lepas, to support our continued growth and innovation.
               </p>
             </div>
             <Image
@@ -200,7 +198,7 @@ export default function AboutPage() {
               height={1000}
               width={1000}
               alt="Deal image"
-              className="h-full w-full object-cover min-h-[300px] md:w-[50%] rounded-md order-2 md:order-1"
+              className="w-full md:w-[50%] rounded-md order-2 md:order-1 px-9"
             />
           </FadeOnScroll>
           <FadeOnScroll className="max-w-4xl flex flex-col md:flex-row items-center bg-white border border-neutral p-3 rounded-md">

@@ -29,8 +29,8 @@ export default function Footer() {
               <div className="max-w-xs">
                 <ContentHeading className="mb-3">Location</ContentHeading>
                 <p>
-                  Plot 159, Jalan Sungai Kluang, Bayan Lepas Phase 1 FTZ, 11900
-                  Bayan Lepas, Penang, Malaysia
+                  No. 8, Lintang Beringin, Beechwood Light Industrial, 11900
+                  Batu Maung, Penang, Malaysia
                 </p>
               </div>
               <div className="flex flex-col gap-6">
@@ -40,7 +40,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <ContentHeading className="mb-3">Email</ContentHeading>
-                  <p>contact@ktool.com</p>
+                  <p>sales@ktoolengineering.com</p>
                 </div>
               </div>
             </div>
