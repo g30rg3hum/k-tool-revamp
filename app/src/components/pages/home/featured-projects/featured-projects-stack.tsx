@@ -9,17 +9,25 @@ import { useEffect, useState } from "react";
 const projects = [
   {
     title: "Precision tooling for stamping applications",
-    description: "[...]",
+    description: [
+      "High-precision punches manufactured to strict tolerances for reliable, high-volume production.",
+      "Engineered for durability and consistent performance in demanding industrial environments.",
+    ],
     image: "stamping.png",
   },
   {
     title: "High-performance components for semiconductor manufacturing",
-    description: "[...]",
+    description: [
+      "Precision die sets designed for semiconductor fabrication applications.",
+      "Manufactured to detailed specifications ensuring optimal performance, repeatability, and reliability in critical semiconductor manufacturing processes.",
+    ],
     image: "semiconductor.png",
   },
   {
     title: "High-precision mold inserts for connector and housing production",
-    description: "[...]",
+    description: [
+      "Manufactured to tight tolerances ensuring consistent part quality and extended mold life in high-volume production runs.",
+    ],
     image: "mold-inserts.png",
   },
   // {
@@ -96,7 +104,13 @@ export default function FeaturedProjectsStack() {
             <ContentHeading className="mb-3">
               {projects[currentProject].title}
             </ContentHeading>
-            <p>{projects[currentProject].description}</p>
+            <div className="space-y-3">
+              {projects[currentProject].description.map((line, index) => (
+                <p key={`${projects[currentProject]} - line ${index + 1}`}>
+                  {line}
+                </p>
+              ))}
+            </div>
           </div>
           <div className="flex gap-3">
             {projects.map((_, index) => (
