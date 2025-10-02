@@ -3,11 +3,13 @@ import ContentHeading from "@/components/layout/section/content/content-heading"
 import SectionHeading from "@/components/layout/section/section-heading";
 import SectionLabel from "@/components/layout/section/section-label";
 import AvailablePositionsButton from "@/components/pages/careers/available-positions-button";
+import Construction from "@/components/pages/reusables/construction";
 import GeneralContact from "@/components/pages/sections/general-contact";
 import Hyperlink from "@/components/ui/hyperlink";
 import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/lib/constants/styles";
 import clsx from "clsx";
 import { BookOpen, Briefcase, Rose, SquareArrowOutUpRight } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
 
 const gridImages = [
@@ -87,8 +89,14 @@ const hiring = [
   },
 ];
 
-// TODO: add metadata
+export const metadata: Metadata = {
+  title: "Careers | K-Tool Engineering",
+  description:
+    "Explore career opportunities at K-Tool Engineering and join our team of skilled precision engineering professionals.",
+};
 export default function CareersPage() {
+  return <Construction />;
+
   return (
     <div className={SPACE_BETWEEN_SECTIONS}>
       <div className={CONTENT_LAYOUT}>

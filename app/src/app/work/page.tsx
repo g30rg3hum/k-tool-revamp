@@ -8,8 +8,13 @@ import SpecificExamples from "@/components/pages/work/specific-examples";
 import Hyperlink from "@/components/ui/hyperlink";
 import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/lib/constants/styles";
 import { Eye, LineSquiggle } from "lucide-react";
+import { Metadata } from "next";
 
-// TODO: add metadata
+export const metadata: Metadata = {
+  title: "Work | K-Tool Engineering",
+  description:
+    "Explore our example work pieces and discover what kind of precision engineering solutions and services K-Tool Engineering offers.",
+};
 export default function WorkPage() {
   return (
     <div className={SPACE_BETWEEN_SECTIONS}>
