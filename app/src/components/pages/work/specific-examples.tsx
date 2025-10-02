@@ -26,12 +26,37 @@ const stampingImages = [
   },
 ];
 
-const exampleImages = [
+const cncMachiningImages = [
   {
-    width: 240,
+    width: 90,
     file: "1.png",
+    position: "top-[25%] left-[15%] sm:left-[20%] rotate-4 lg:left-[17%]",
+  },
+  {
+    width: 150,
+    file: "2.png",
+    position: "top-[10%] left-[38%] sm:left-[40%] rotate-24 lg:top-[13%]",
+  },
+  {
+    width: 145,
+    file: "3.png",
+    position: "top-[30%] right-[10%] sm:right-[15%] -rotate-12",
+  },
+  {
+    width: 130,
+    file: "4.png",
+    position: "top-[52%] left-[15%] sm:left-[24%] lg:top-[46%] -rotate-4",
+  },
+  {
+    width: 130,
+    file: "5.png",
+    position: "top-[58%] right-[8%] sm:right-[20%] rotate-12",
+  },
+  {
+    width: 140,
+    file: "6.png",
     position:
-      "top-[40%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-4",
+      "top-[77%] left-[20%] sm:top-[73%] sm:left-[32%] md:left-[40%] md:top-[67%] lg:left-[24%] -rotate-24 lg:top-[77%]",
   },
 ];
 
@@ -152,25 +177,54 @@ export default function SpecificExamples() {
             {currentExample === 1 && (
               <div>
                 <SectionHeading className="mb-6">
-                  Example 2 title
+                  CNC Milling Components
                 </SectionHeading>
 
-                <div className="mb-6">
-                  <ContentHeading className="mb-3">
-                    Example sub-heading
-                  </ContentHeading>
+                <div className="mb-6 space-y-3">
+                  <ContentHeading>Tight tolerance capabilities</ContentHeading>
                   <p>
-                    This is an example paragraph detailing all the important
-                    details of example 2. We need to show that this example
-                    offers some sort of result for the client.
+                    Tight tolerance machining achieved through advanced CAM
+                    programming, custom fixturing, and optimized cutting
+                    strategies.
+                  </p>
+                  <p>
+                    Precise control of toolpaths, feeds, and speeds combined
+                    with strategic work holding minimises tool deflection and
+                    thermal distortion.
                   </p>
                 </div>
 
-                <div>
-                  <ContentHeading className="mb-3">
-                    Another example sub-heading
-                  </ContentHeading>
-                  <p>This is another example paragraph.</p>
+                <div className="mb-6 space-y-3">
+                  <ContentHeading>Multi-material expertise</ContentHeading>
+                  <p>
+                    Our CNC milling work includes challenging materials, such as
+                    titanium alloys, hardened tool steels, and high performance
+                    polymers like ULTEM, PEEK and Torlon.
+                  </p>
+                  <p>
+                    Specialised tooling strategies and cutting parameters are
+                    essential for these materials to prevent premature wear and
+                    maintain dimensional stability during machining.
+                  </p>
+                  <p>
+                    We also provide precision finishing services including gold
+                    plating to deliver complete component solutions.
+                  </p>
+                </div>
+
+                <div className="mb-6 space-y-3">
+                  <ContentHeading>Micro-machining capabilities</ContentHeading>
+                  <p>
+                    We produce components with extremely small features
+                    including 0.1mm diameter holes, micro-threads and intricate
+                    internal channels.
+                  </p>
+                  <p>
+                    Our precision spindles and specialised micro-tooling enable
+                    use to produce critical components for electronics
+                    manufacturing, medical devices, and automatic applications
+                    that require exceptional detail and accuracy.
+                  </p>
                 </div>
               </div>
             )}
@@ -222,7 +276,7 @@ export default function SpecificExamples() {
                 className="h-full grow-1"
                 custom={direction}
               >
-                {exampleImages.map((image, index) => (
+                {cncMachiningImages.map((image, index) => (
                   <motion.div
                     key={`Example 2 images - ${image.file}`}
                     animate={{ translateY: [0, -10, 0] }}
@@ -233,8 +287,8 @@ export default function SpecificExamples() {
                     className={`absolute ${image.position}`}
                   >
                     <Image
-                      src={`/images/work/example/${image.file}`}
-                      alt={`Example ${index + 1}`}
+                      src={`/images/work/cnc-machining/${image.file}`}
+                      alt={`CNC machining component ${index + 1}`}
                       height={1000}
                       width={image.width}
                     />
