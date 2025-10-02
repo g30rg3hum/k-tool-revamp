@@ -40,7 +40,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <ContentHeading className="mb-3">Email</ContentHeading>
-                  <p>sales@ktoolengineering.com</p>
+                  <p>sales@ktoolmalaysia.com</p>
                 </div>
               </div>
             </div>

@@ -10,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 import Footer from "@/components/layout/footer/footer";
 import { Analytics } from "@vercel/analytics/next";
 import { Organization, WithContext } from "schema-dts";
+import Head from "next/head";
 
 const logoFont = Special_Gothic_Expanded_One({
   variable: "--font-logo",
@@ -60,7 +61,7 @@ const structuredData: WithContext<Organization> = {
     "@type": "ContactPoint",
     contactType: "Customer service",
     telephone: "+604-645-1518",
-    email: "sales@ktoolengineering.com",
+    email: "sales@ktoolmalaysia.com",
     areaServed: "MY",
   },
   address: {
@@ -81,10 +82,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </Head>
 
       <body
         className={`${logoFont.variable} ${sans.variable} ${serif.variable} antialiased font-medium`}
