@@ -13,7 +13,8 @@ export async function POST(request: NextRequest) {
   const firstName = formData.get("firstName") as string;
   const lastName = formData.get("lastName") as string;
   const email = formData.get("email") as string;
-  const title = formData.get("title") as string;
+  const contactNumber = formData.get("contactNumber") as string;
+  const title = formData.get("title") as string | null;
   const description = formData.get("description") as string;
   const duration = formData.get("duration") as string | null;
   const durationUnit = formData.get("durationUnit") as string | null;
@@ -21,7 +22,7 @@ export async function POST(request: NextRequest) {
   const currency = formData.get("currency") as string | null;
   const file = formData.get("file") as File | null;
 
-  if (!firstName || !lastName || !email || !title || !description) {
+  if (!firstName || !lastName || !email || !contactNumber || !description) {
     return NextResponse.json("Missing required fields", { status: 400 });
   }
 
@@ -102,11 +103,12 @@ export async function POST(request: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: process.env.RESEND_EMAIL_FROM ?? "",
       to: process.env.RESEND_EMAIL_TO ?? "",
-      subject: `Quote request: ${title}`,
+      subject: `New quote request` + (title ? `: ${title}` : ""),
       react: GetQuote({
         firstName,
         lastName,
         email,
+        contactNumber,
         description,
         duration: duration ?? undefined,
         durationUnit: durationUnit ?? undefined,

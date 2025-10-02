@@ -2,6 +2,7 @@ interface Props {
   firstName: string;
   lastName: string;
   email: string;
+  contactNumber: string;
   description: string;
   duration?: string;
   durationUnit?: string;
@@ -13,6 +14,7 @@ export function GetQuote({
   firstName,
   lastName,
   email,
+  contactNumber,
   description,
   duration,
   durationUnit,
@@ -26,6 +28,9 @@ export function GetQuote({
       </p>
       <p>
         <strong>Email:</strong> {email}
+      </p>
+      <p>
+        <strong>Contact number:</strong> {contactNumber}
       </p>
       {duration && durationUnit && (
         <>

@@ -1,17 +1,21 @@
 // Validation rules
 export const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+export const CONTACT_NUMBER_REGEX = /^[0-9+\-\s()]*$/;
 
 // Validation messages
-export const REQUIRED_MESSAGE = "This field is required";
-export const INVALID_EMAIL_MESSAGE = "Please enter a valid email address";
-export const INVALID_NUMBER_MESSAGE = "Please enter a valid number";
+export const REQUIRED_MESSAGE = "This field is required.";
+export const INVALID_EMAIL_MESSAGE = "Please enter a valid email address.";
+export const INVALID_NUMBER_MESSAGE = "Please enter a valid number.";
 export const TOO_LONG_MESSAGE = (max: number) =>
-  `Maximum ${max} characters allowed`;
+  `Maximum ${max} characters allowed.`;
+export const INVALID_CONTACT_NUMBER_MESSAGE =
+  "Please enter a valid contact number. Only digits, spaces, parentheses, hyphens, and plus signs are allowed.";
 
 export const NAME_MAX_LENGTH = 100;
 export const EMAIL_ADDRESS_MAX_LENGTH = 100;
 export const SUBJECT_MAX_LENGTH = 200;
 export const BODY_MAX_LENGTH = 5000;
+export const CONTACT_NUMBER_MAX_LENGTH = 20;
 
 export const SUPPORTED_FILE_EXTENSIONS = [
   ".jpg",

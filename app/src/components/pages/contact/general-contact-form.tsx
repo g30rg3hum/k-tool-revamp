@@ -2,8 +2,11 @@
 
 import {
   BODY_MAX_LENGTH,
+  CONTACT_NUMBER_MAX_LENGTH,
+  CONTACT_NUMBER_REGEX,
   EMAIL_ADDRESS_MAX_LENGTH,
   EMAIL_REGEX,
+  INVALID_CONTACT_NUMBER_MESSAGE,
   INVALID_EMAIL_MESSAGE,
   NAME_MAX_LENGTH,
   REQUIRED_MESSAGE,
@@ -32,6 +35,14 @@ const schema = yup.object({
     .matches(EMAIL_REGEX, { message: INVALID_EMAIL_MESSAGE })
     .required(REQUIRED_MESSAGE)
     .max(EMAIL_ADDRESS_MAX_LENGTH, TOO_LONG_MESSAGE(EMAIL_ADDRESS_MAX_LENGTH)),
+  contactNumber: yup
+    .string()
+    .matches(CONTACT_NUMBER_REGEX, { message: INVALID_CONTACT_NUMBER_MESSAGE })
+    .required(REQUIRED_MESSAGE)
+    .max(
+      CONTACT_NUMBER_MAX_LENGTH,
+      TOO_LONG_MESSAGE(CONTACT_NUMBER_MAX_LENGTH)
+    ),
   subject: yup
     .string()
     .required(REQUIRED_MESSAGE)
@@ -53,7 +64,8 @@ export default function GeneralContactForm() {
   const onSubmit = async (data: yup.InferType<typeof schema>) => {
     const toastId = toast.loading("Sending your message...");
 
-    const { firstName, lastName, email, subject, message } = data;
+    const { firstName, lastName, email, contactNumber, subject, message } =
+      data;
 
     const res = await fetch("/api/mail/general-inquiry", {
       method: "POST",
@@ -64,6 +76,7 @@ export default function GeneralContactForm() {
         firstName,
         lastName,
         email,
+        contactNumber,
         subject,
         message,
       }),
@@ -105,6 +118,13 @@ export default function GeneralContactForm() {
         placeholder="john.doe@gmail.com"
         {...register("email")}
         error={errors.email?.message}
+      />
+      <Input
+        label="Contact number"
+        placeholder="+60 12-345 6789"
+        {...register("contactNumber")}
+        error={errors.contactNumber?.message}
+        contactNumber
       />
       <Input
         label="Subject"
