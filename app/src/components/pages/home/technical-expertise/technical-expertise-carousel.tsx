@@ -1,11 +1,9 @@
-"use client";
-
 import * as motion from "motion/react-client";
 import ContentHeading from "@/components/layout/section/content/content-heading";
 import clsx from "clsx";
-import { useMeasure } from "@uidotdev/usehooks";
+import SlidingCarousel from "@/components/ui/sliding-carousel";
 
-const technicalExpertisePoints = [
+export const technicalExpertisePoints = [
   {
     title: "Profile Grinding",
     description:
@@ -51,51 +49,32 @@ const technicalExpertisePoints = [
 ];
 
 export default function TechnicalExpertiseCarousel() {
-  const [containerRef, { width: containerWidth }] = useMeasure();
-  const [contentRef, { width: contentWidth }] = useMeasure();
-
-  const maxDragLeft =
-    containerWidth && contentWidth
-      ? Math.min(0, containerWidth - contentWidth)
-      : 0;
-
   return (
-    <div
-      className="overflow-y-visible overflow-x-clip cursor-grab active:cursor-grabbing"
-      ref={containerRef}
-    >
-      <motion.div
-        className="flex gap-6 min-w-max"
-        drag="x"
-        dragConstraints={{ left: maxDragLeft, right: 0 }}
-        ref={contentRef}
-        dragElastic={0.05}
-      >
-        {[...technicalExpertisePoints].map((point) => (
-          <motion.div
-            key={point.title}
-            whileHover={{ y: -3 }}
-            className={clsx(
-              "h-[25rem] w-xs bg-white rounded-md shrink-0 flex flex-col justify-between border border-neutral"
-            )}
-          >
-            <div className="p-6">
-              <ContentHeading className="mb-3 border-b">
-                {point.title}
-              </ContentHeading>
+    <SlidingCarousel>
+      {[...technicalExpertisePoints].map((point) => (
+        <motion.div
+          key={point.title}
+          whileHover={{ y: -3 }}
+          className={clsx(
+            "h-[25rem] w-xs bg-white rounded-md shrink-0 flex flex-col justify-between border border-neutral"
+          )}
+        >
+          <div className="p-6">
+            <ContentHeading className="mb-3 border-b">
+              {point.title}
+            </ContentHeading>
 
-              <p>{point.description}</p>
-            </div>
+            <p>{point.description}</p>
+          </div>
 
-            <div
-              className="rounded-md bg-center bg-cover h-[43%] m-3"
-              style={{
-                backgroundImage: `url('/images/stock/home/technical-expertise/${point.image}')`,
-              }}
-            />
-          </motion.div>
-        ))}
-      </motion.div>
-    </div>
+          <div
+            className="rounded-md bg-center bg-cover h-[43%] m-3"
+            style={{
+              backgroundImage: `url('/images/stock/home/technical-expertise/${point.image}')`,
+            }}
+          />
+        </motion.div>
+      ))}
+    </SlidingCarousel>
   );
 }

@@ -5,16 +5,19 @@ interface Props {
   children: React.ReactNode;
   direction?: "up" | "down";
   margin?: boolean;
+  id?: string;
   className?: string;
 }
 export default function FadeOnScroll({
   children,
   direction = "up",
   margin = false,
+  id,
   className,
 }: Props) {
   return (
     <motion.div
+      id={id}
       initial={{
         opacity: 0,
         y: direction === "up" ? movementAmount : -movementAmount,

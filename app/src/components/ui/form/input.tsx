@@ -6,6 +6,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   error?: string;
   number?: boolean;
+  contactNumber?: boolean;
 }
 // Variable input type
 export default function Input({
@@ -14,6 +15,7 @@ export default function Input({
   error,
   type = "text",
   number,
+  contactNumber,
   ...rest
 }: Props) {
   return (
@@ -25,13 +27,23 @@ export default function Input({
         placeholder={placeholder ?? "Enter value here..."}
         {...rest}
         onKeyDown={
-          number
+          number || contactNumber
             ? (e) => {
+                const generalKeysCheck = [
+                  "Backspace",
+                  "Delete",
+                  "ArrowLeft",
+                  "ArrowRight",
+                ].includes(e.key);
+
+                if (number && !/[0-9,\.]/.test(e.key) && !generalKeysCheck) {
+                  e.preventDefault();
+                }
+
                 if (
-                  !/[0-9,\.]/.test(e.key) &&
-                  !["Backspace", "Delete", "ArrowLeft", "ArrowRight"].includes(
-                    e.key
-                  )
+                  contactNumber &&
+                  !/[0-9+\-\s()]/.test(e.key) &&
+                  !generalKeysCheck
                 ) {
                   e.preventDefault();
                 }

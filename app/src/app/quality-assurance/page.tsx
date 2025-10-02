@@ -112,7 +112,7 @@ export default function QualityAssurancePage() {
             {content.map((section, index) => (
               <FadeOnScroll key={section.title}>
                 <ContentHeading className="mb-6">
-                  <span className="w-8 h-8 bg-primary rounded-full text-background mr-3 inline-flex items-center justify-center text-sm font-medium">
+                  <span className="w-8 h-8 bg-primary rounded-full text-background mr-3 inline-flex items-center justify-center text-sm font-bold">
                     {index + 1}
                   </span>{" "}
                   {section.title}

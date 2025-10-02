@@ -2,9 +2,16 @@ interface Props {
   firstName: string;
   lastName: string;
   email: string;
+  contactNumber: string;
   message: string;
 }
-export function GeneralEnquiry({ firstName, lastName, email, message }: Props) {
+export function GeneralEnquiry({
+  firstName,
+  lastName,
+  email,
+  contactNumber,
+  message,
+}: Props) {
   return (
     <div>
       <p>
@@ -12,6 +19,9 @@ export function GeneralEnquiry({ firstName, lastName, email, message }: Props) {
       </p>
       <p>
         <strong>Email:</strong> {email}
+      </p>
+      <p>
+        <strong>Contact Number:</strong> {contactNumber}
       </p>
       <br />
       <p>

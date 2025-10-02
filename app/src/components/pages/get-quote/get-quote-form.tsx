@@ -2,10 +2,13 @@
 
 import {
   BODY_MAX_LENGTH,
+  CONTACT_NUMBER_MAX_LENGTH,
+  CONTACT_NUMBER_REGEX,
   CURRENCIES,
   DURATION_UNITS,
   EMAIL_ADDRESS_MAX_LENGTH,
   EMAIL_REGEX,
+  INVALID_CONTACT_NUMBER_MESSAGE,
   INVALID_EMAIL_MESSAGE,
   INVALID_NUMBER_MESSAGE,
   MAX_FILE_SIZE,
@@ -39,9 +42,17 @@ const schema = yup.object({
     .matches(EMAIL_REGEX, { message: INVALID_EMAIL_MESSAGE })
     .required(REQUIRED_MESSAGE)
     .max(EMAIL_ADDRESS_MAX_LENGTH, TOO_LONG_MESSAGE(EMAIL_ADDRESS_MAX_LENGTH)),
+  contactNumber: yup
+    .string()
+    .matches(CONTACT_NUMBER_REGEX, { message: INVALID_CONTACT_NUMBER_MESSAGE })
+    .required(REQUIRED_MESSAGE)
+    .max(
+      CONTACT_NUMBER_MAX_LENGTH,
+      TOO_LONG_MESSAGE(CONTACT_NUMBER_MAX_LENGTH)
+    ),
   title: yup
     .string()
-    .required(REQUIRED_MESSAGE)
+    // .required(REQUIRED_MESSAGE)
     .max(SUBJECT_MAX_LENGTH, TOO_LONG_MESSAGE(SUBJECT_MAX_LENGTH)),
   duration: yup
     .number()
@@ -99,6 +110,7 @@ export default function GetQuoteForm() {
       firstName,
       lastName,
       email,
+      contactNumber,
       title,
       duration,
       durationUnit,
@@ -112,8 +124,10 @@ export default function GetQuoteForm() {
     formData.append("firstName", firstName);
     formData.append("lastName", lastName);
     formData.append("email", email);
-    formData.append("title", title);
+    formData.append("contactNumber", contactNumber);
     formData.append("description", description);
+
+    if (title) formData.append("title", title);
 
     if (duration) {
       formData.append("duration", duration.toString());
@@ -174,7 +188,14 @@ export default function GetQuoteForm() {
         error={errors.email?.message}
       />
       <Input
-        label="Title *"
+        label="Contact number *"
+        placeholder="+60 12-345 6789"
+        {...register("contactNumber")}
+        error={errors.contactNumber?.message}
+        contactNumber
+      />
+      <Input
+        label="Title"
         placeholder="My project title ..."
         {...register("title")}
         error={errors.title?.message}
@@ -183,7 +204,7 @@ export default function GetQuoteForm() {
       <div className="flex flex-col gap-3 lg:flex-row">
         <div className="flex gap-3 w-full">
           <Input
-            label="Duration"
+            label="Timeline"
             placeholder="How long?"
             min={1}
             {...register("duration")}
@@ -191,7 +212,7 @@ export default function GetQuoteForm() {
             number
           />
           <Select
-            label="Duration unit"
+            label="Timeline unit"
             {...register("durationUnit")}
             options={DURATION_UNITS.map((unit) => ({
               label: unit,

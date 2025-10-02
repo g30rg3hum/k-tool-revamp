@@ -8,6 +8,7 @@ interface PostPayload {
   firstName: string;
   lastName: string;
   email: string;
+  contactNumber: string;
   subject: string;
   message: string;
 }
@@ -21,9 +22,17 @@ export async function POST(request: NextRequest) {
     return NextResponse.json("Invalid JSON in request body", { status: 400 });
   }
 
-  const { firstName, lastName, email, subject, message } = payload;
+  const { firstName, lastName, email, contactNumber, subject, message } =
+    payload;
 
-  if (!firstName || !lastName || !email || !subject || !message) {
+  if (
+    !firstName ||
+    !lastName ||
+    !email ||
+    !contactNumber ||
+    !subject ||
+    !message
+  ) {
     return NextResponse.json("Missing required fields", { status: 400 });
   }
 
@@ -59,6 +68,7 @@ export async function POST(request: NextRequest) {
         firstName,
         lastName,
         email,
+        contactNumber,
         message,
       }),
     });
