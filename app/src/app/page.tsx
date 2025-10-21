@@ -23,6 +23,7 @@ import FeaturedProjectsStack from "@/components/pages/home/featured-projects/fea
 import FadeOnScroll from "@/components/animations/fade-on-scroll";
 import GeneralContact from "@/components/pages/sections/general-contact";
 import GlobalOutreachMap from "@/components/pages/home/global-outreach/global-outreach-map";
+import ContentHeading from "@/components/layout/section/content/content-heading";
 
 const reasonsToChooseUs = [
   {
@@ -96,8 +97,9 @@ export default function Home() {
             </h2>
             <p className="max-w-lg text-center mb-6">
               We specialise in building advanced, complex tooling and
-              mold-making that meet the highest standards of precision and
-              quality and act as the foundation for tomorrow&apos;s technology.
+              mold-making that meet the highest standards of precision
+              engineering and quality and act as the foundation for
+              tomorrow&apos;s technology.
             </p>
             <HeroButton />
           </div>
@@ -284,12 +286,15 @@ export default function Home() {
               <span className="text-primary"> several countries</span> across
               <span className="text-primary"> several continents.</span>
             </SectionHeading>
+            <h2 className="text-left max-w-xl lg:max-w-2xl sm:mx-auto sm:text-center mb-3 font-bold">
+              Delivering precision engineering solutions worldwide, from our
+              headquarters in Malaysia.
+            </h2>
             <div className="text-left max-w-2xl sm:mx-auto sm:text-center space-y-3">
               <p>
-                We&apos;re based in Malaysia, but our methods are scalable and
-                designed for global reach. This way, we can support you wherever
-                you are, and provide the same exceptional service every time
-                that extends beyond borders.
+                Our methods are scalable and designed for global reach. We can
+                support you wherever you are, and provide the same exceptional
+                service every time that extends beyond borders.
               </p>
               <p className="font-semibold">
                 Currently, we serve: USA, Austria, Germany, Ireland, Malaysia,

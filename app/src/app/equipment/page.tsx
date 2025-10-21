@@ -9,9 +9,9 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Equipment | K-Tool Engineering",
+  title: "Equipment | K-Tool Engineering | Precision Engineering Malaysia",
   description:
-    "Discover the advanced machinery and precision tools at K-Tool Engineering that ensure top-quality results for your precise engineering needs.",
+    "Discover the advanced machinery and precision tools at K-Tool Engineering that ensure top-quality results for your precise engineering needs. Our factories are in Malaysia and we serve clients worldwide.",
 };
 
 const mainEquipment = [

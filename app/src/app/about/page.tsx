@@ -9,9 +9,9 @@ import { BicepsFlexed, Eye, History, Rocket } from "lucide-react";
 import Image from "next/image";
 
 export const metadata = {
-  title: "About Us | K-Tool Engineering",
+  title: "About Us | K-Tool Engineering | Precision Engineering Malaysia",
   description:
-    "Learn about K-Tool Engineering's mission, vision, values, and history as a leading, international precision engineering company.",
+    "Learn about K-Tool Engineering's mission, vision, values, and history as a leading, international precision engineering company, based in Malaysia.",
 };
 
 export default function AboutPage() {

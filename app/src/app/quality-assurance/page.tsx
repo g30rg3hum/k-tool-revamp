@@ -9,9 +9,10 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Quality Assurance | K-Tool Engineering",
+  title:
+    "Quality Assurance | K-Tool Engineering | Precision Engineering Malaysia",
   description:
-    "Discover K-Tool Engineering's rigorous quality assurance processes that ensure precision, accuracy, and reliability at every stage of manufacturing.",
+    "Discover K-Tool Engineering's rigorous quality assurance processes that ensure precision, accuracy, and reliability at every stage of manufacturing. Our ISO 9001:2015 certified system guarantees top-quality results for your engineering needs. We are based in Malaysia and serve clients worldwide.",
 };
 
 const content = [

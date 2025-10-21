@@ -8,9 +8,9 @@ import { Eye, MessagesSquare, Package, Play, Quote, Send } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Get a Quote | K-Tool Engineering",
+  title: "Get a Quote | K-Tool Engineering | Precision Engineering Malaysia",
   description:
-    "Request a quote for your precision engineering project from K-Tool Engineering. Provide your project details and receive a competitive quotation within 24 hours.",
+    "Request a quote for your precision engineering project from K-Tool Engineering. Provide your project details and receive a competitive quotation within 24 hours. Serving clients worldwide from our headquarters in Malaysia.",
 };
 
 const steps = [

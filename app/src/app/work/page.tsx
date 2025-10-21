@@ -11,9 +11,9 @@ import { Eye, LineSquiggle } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Work | K-Tool Engineering",
+  title: "Work | K-Tool Engineering | Precision Engineering Malaysia",
   description:
-    "Explore our example work pieces and discover what kind of precision engineering solutions and services K-Tool Engineering offers.",
+    "Explore our example work pieces and discover what kind of precision engineering solutions and services K-Tool Engineering offers. Based in Malaysia, we serve clients worldwide with top-quality results.",
 };
 export default function WorkPage() {
   return (
