@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Error from "./error";
 import Label from "./label";
 
@@ -23,7 +24,12 @@ export default function Input({
       <Label htmlFor={label}>{label}</Label>
       <input
         type={type}
-        className="w-full p-3 text-sm border border-black/40 rounded-md focus:outline-none focus:ring-2 focus:ring-primary transition duration-300"
+        className={clsx(
+          "w-full text-sm border border-black/40 rounded-md focus:outline-none focus:ring-3 focus:ring-primary transition duration-300",
+          type !== "file"
+            ? "p-3"
+            : "py-0 pr-3 file:-ml-px file:px-4 file:mr-3 file:py-3 file:bg-neutral file:border-0 file:rounded-l-md file:cursor-pointer file:border-r file:border-black/40"
+        )}
         placeholder={placeholder ?? "Enter value here..."}
         {...rest}
         onKeyDown={

@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <header
       className={clsx(
-        "sticky top-0 z-60 bg-background mb-6",
+        "sticky top-0 z-40 bg-background mb-6",
         hasScrolled && "border-b border-neutral"
       )}
     >

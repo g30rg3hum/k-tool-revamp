@@ -12,6 +12,7 @@ import { AnimatePresence } from "motion/react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import { useState } from "react";
+import MaterialList from "./material-list";
 
 const stampingImages = [
   {
@@ -197,9 +198,8 @@ export default function SpecificExamples() {
                 <div className="mb-6 space-y-3">
                   <ContentHeading>Multi-material expertise</ContentHeading>
                   <p>
-                    Our CNC milling work includes challenging materials, such as
-                    titanium alloys, hardened tool steels, and high performance
-                    polymers like ULTEM, PEEK and Torlon.
+                    Our CNC milling work includes challenging materials. See a{" "}
+                    <MaterialList /> of the advanced materials we work with.
                   </p>
                   <p>
                     Specialised tooling strategies and cutting parameters are
