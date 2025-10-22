@@ -50,7 +50,7 @@ export default function Footer() {
             </p>
             <div className="flex justify-end md:justify-between items-end">
               <p className="pb-4 hidden md:block">
-                © 2025 K-Tool Engineering.
+                © 2025 K-Tool Engineering Sdn Bhd.
                 <br /> All rights reserved.
               </p>
               <h1 className="self-end bottom-0 right-0 text-[5rem] sm:text-[7rem] lg:text-[10rem] leading-none font-logo m-0 p-0 opacity-20">
