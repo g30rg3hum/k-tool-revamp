@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
   try {
     const { data, error } = await resend.emails.send({
       from: process.env.RESEND_EMAIL_FROM ?? "",
-      to: process.env.RESEND_EMAIL_TO ?? "",
+      to: "inquiry@ktoolengineering.com",
       subject: `General enquiry: ${subject}`,
       react: GeneralEnquiry({
         firstName,

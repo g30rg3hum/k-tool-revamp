@@ -38,10 +38,10 @@ export default function Footer() {
                   <ContentHeading className="mb-3">Phone number</ContentHeading>
                   <p>+604 645 1518</p>
                 </div>
-                <div>
+                {/* <div>
                   <ContentHeading className="mb-3">Email</ContentHeading>
                   <p>sales@ktoolmalaysia.com</p>
-                </div>
+                </div> */}
               </div>
             </div>
             <p className="mb-12 md:hidden">

@@ -50,27 +50,27 @@ const schema = yup.object({
       CONTACT_NUMBER_MAX_LENGTH,
       TOO_LONG_MESSAGE(CONTACT_NUMBER_MAX_LENGTH)
     ),
-  title: yup
-    .string()
-    // .required(REQUIRED_MESSAGE)
-    .max(SUBJECT_MAX_LENGTH, TOO_LONG_MESSAGE(SUBJECT_MAX_LENGTH)),
-  duration: yup
-    .number()
-    .transform((currentValue, originalValue) => {
-      return originalValue === "" ? null : currentValue;
-    })
-    .nullable()
-    .typeError(INVALID_NUMBER_MESSAGE), // optional alongside unit
-  durationUnit: yup
-    .mixed()
-    .test((val) => DURATION_UNITS.includes(val as string)),
-  budget: yup
-    .number()
-    .transform((currentValue, originalValue) => {
-      return originalValue === "" ? null : currentValue;
-    })
-    .nullable()
-    .typeError(INVALID_NUMBER_MESSAGE), // optional alongside unit
+  //   title: yup
+  //     .string()
+  //     // .required(REQUIRED_MESSAGE)
+  //     .max(SUBJECT_MAX_LENGTH, TOO_LONG_MESSAGE(SUBJECT_MAX_LENGTH)),
+  //   duration: yup
+  //     .number()
+  //     .transform((currentValue, originalValue) => {
+  //       return originalValue === "" ? null : currentValue;
+  //     })
+  //     .nullable()
+  //     .typeError(INVALID_NUMBER_MESSAGE), // optional alongside unit
+  //   durationUnit: yup
+  //     .mixed()
+  //     .test((val) => DURATION_UNITS.includes(val as string)),
+  //   budget: yup
+  //     .number()
+  //     .transform((currentValue, originalValue) => {
+  //       return originalValue === "" ? null : currentValue;
+  //     })
+  //     .nullable()
+  //     .typeError(INVALID_NUMBER_MESSAGE), // optional alongside unit
   currency: yup.mixed().test((val) => CURRENCIES.includes(val as string)),
   description: yup
     .string()
@@ -111,10 +111,10 @@ export default function GetQuoteForm() {
       lastName,
       email,
       contactNumber,
-      title,
-      duration,
-      durationUnit,
-      budget,
+      //   title,
+      //   duration,
+      //   durationUnit,
+      //   budget,
       currency,
       description,
       file,
@@ -127,17 +127,17 @@ export default function GetQuoteForm() {
     formData.append("contactNumber", contactNumber);
     formData.append("description", description);
 
-    if (title) formData.append("title", title);
+    // if (title) formData.append("title", title);
 
-    if (duration) {
-      formData.append("duration", duration.toString());
-      formData.append("durationUnit", durationUnit!.toString());
-    }
+    // if (duration) {
+    //   formData.append("duration", duration.toString());
+    //   formData.append("durationUnit", durationUnit!.toString());
+    // }
 
-    if (budget) {
-      formData.append("budget", budget.toString());
-      formData.append("currency", currency!.toString());
-    }
+    // if (budget) {
+    //   formData.append("budget", budget.toString());
+    //   formData.append("currency", currency!.toString());
+    // }
 
     if (file && file instanceof FileList && file.length > 0) {
       formData.append("file", file[0]);
@@ -194,14 +194,14 @@ export default function GetQuoteForm() {
         error={errors.contactNumber?.message}
         contactNumber
       />
-      <Input
+      {/* <Input
         label="Title"
         placeholder="My project title ..."
         {...register("title")}
         error={errors.title?.message}
-      />
+      /> */}
       {/* Duration, budget */}
-      <div className="flex flex-col gap-3 lg:flex-row">
+      {/* <div className="flex flex-col gap-3 lg:flex-row">
         <div className="flex gap-3 w-full">
           <Input
             label="Timeline"
@@ -240,7 +240,16 @@ export default function GetQuoteForm() {
             error={errors.currency?.message}
           />
         </div>
-      </div>
+      </div> */}
+      <Select
+        label="Currency"
+        {...register("currency")}
+        options={CURRENCIES.map((currency) => ({
+          label: currency,
+          value: currency,
+        }))}
+        error={errors.currency?.message}
+      />
 
       <TextArea
         label="Description *"

@@ -4,9 +4,9 @@ interface Props {
   email: string;
   contactNumber: string;
   description: string;
-  duration?: string;
-  durationUnit?: string;
-  budget?: string;
+  //   duration?: string;
+  //   durationUnit?: string;
+  //   budget?: string;
   currency?: string;
   // file is sent as attachment
 }
@@ -16,9 +16,9 @@ export function GetQuote({
   email,
   contactNumber,
   description,
-  duration,
-  durationUnit,
-  budget,
+  //   duration,
+  //   durationUnit,
+  //   budget,
   currency,
 }: Props) {
   return (
@@ -32,19 +32,27 @@ export function GetQuote({
       <p>
         <strong>Contact number:</strong> {contactNumber}
       </p>
-      {duration && durationUnit && (
+      {/* {duration && durationUnit && (
         <>
           <br />
           <p>
             <strong>Duration:</strong> {duration} {durationUnit}
           </p>
         </>
-      )}
-      {budget && currency && (
+      )} */}
+      {/* {budget && currency && (
         <>
           <br />
           <p>
             <strong>Budget:</strong> {budget} {currency}
+          </p>
+        </>
+      )} */}
+      {currency && (
+        <>
+          <br />
+          <p>
+            <strong>Currency:</strong> {currency}
           </p>
         </>
       )}

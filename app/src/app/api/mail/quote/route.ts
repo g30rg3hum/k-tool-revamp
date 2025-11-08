@@ -14,11 +14,11 @@ export async function POST(request: NextRequest) {
   const lastName = formData.get("lastName") as string;
   const email = formData.get("email") as string;
   const contactNumber = formData.get("contactNumber") as string;
-  const title = formData.get("title") as string | null;
+  //   const title = formData.get("title") as string | null;
   const description = formData.get("description") as string;
-  const duration = formData.get("duration") as string | null;
-  const durationUnit = formData.get("durationUnit") as string | null;
-  const budget = formData.get("budget") as string | null;
+  //   const duration = formData.get("duration") as string | null;
+  //   const durationUnit = formData.get("durationUnit") as string | null;
+  //   const budget = formData.get("budget") as string | null;
   const currency = formData.get("currency") as string | null;
   const file = formData.get("file") as File | null;
 
@@ -102,17 +102,17 @@ export async function POST(request: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: process.env.RESEND_EMAIL_FROM ?? "",
-      to: process.env.RESEND_EMAIL_TO ?? "",
-      subject: `New quote request` + (title ? `: ${title}` : ""),
+      to: "inquiry@ktoolengineering.com",
+      subject: `New quote request from ${email}`,
       react: GetQuote({
         firstName,
         lastName,
         email,
         contactNumber,
         description,
-        duration: duration ?? undefined,
-        durationUnit: durationUnit ?? undefined,
-        budget: budget ?? undefined,
+        // duration: duration ?? undefined,
+        // durationUnit: durationUnit ?? undefined,
+        // budget: budget ?? undefined,
         currency: currency ?? undefined,
       }),
       attachments,
