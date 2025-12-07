@@ -68,7 +68,7 @@ export default function FeaturedProjectsStack() {
                                 className={clsx(
                                     `rounded-md absolute inset-0 md:inset-3 bg-center border border-neutral bg-no-repeat`,
                                     index === 0
-                                        ? "bg-size-[400px] sm:bg-size-[550px] md:bg-size-[380px] lg:bg-size-[520px]"
+                                        ? "bg-size-[400px] sm:bg-size-[550px] md:bg-size-[380px] lg:bg-size-[550px] bg-white"
                                         : "bg-cover"
                                 )}
                                 style={{
