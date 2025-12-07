@@ -82,7 +82,7 @@ export default function ContactPage() {
                                 <div className="underline">
                                     <p>15A, Hilir Sungai Keluang 1</p>
                                     <p>
-                                        Bayan Lepas Free Industrial Zone Phase 4
+                                        Bayan Lepas Free Industrial Park Phase 4
                                     </p>
                                     <p>11900 Bayan Lepas</p>
                                     <p>Penang, Malaysia</p>

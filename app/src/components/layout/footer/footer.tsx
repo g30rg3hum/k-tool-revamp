@@ -34,7 +34,7 @@ export default function Footer() {
                                 </ContentHeading>
                                 <p>
                                     15A, Hilir Sungai Keluang 1, Bayan Lepas
-                                    Free Industrial Zone Phase 4, 11900 Bayan
+                                    Free Industrial Park Phase 4, 11900 Bayan
                                     Lepas, Penang, Malaysia
                                 </p>
                             </div>
