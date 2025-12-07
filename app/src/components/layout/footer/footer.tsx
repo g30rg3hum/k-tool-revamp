@@ -34,8 +34,8 @@ export default function Footer() {
                                 </ContentHeading>
                                 <p>
                                     15A, Hilir Sungai Keluang 1, Bayan Lepas
-                                    Free Industrial Park Phase 4, 11900 Bayan
-                                    Lepas, Penang, Malaysia
+                                    Industrial Park Phase 4, 11900 Bayan Lepas,
+                                    Penang, Malaysia
                                 </p>
                             </div>
                             <div className="flex flex-col gap-6">

@@ -48,7 +48,7 @@ export default function ContactPage() {
                                     size={20}
                                 />{" "}
                                 <span className="underline">
-                                    inquiry@ktoolmalaysia.com
+                                    inquiry@ktoolengineering.com
                                 </span>
                             </p>
                         </div>
@@ -81,9 +81,7 @@ export default function ContactPage() {
                                 />
                                 <div className="underline">
                                     <p>15A, Hilir Sungai Keluang 1</p>
-                                    <p>
-                                        Bayan Lepas Free Industrial Park Phase 4
-                                    </p>
+                                    <p>Bayan Lepas Industrial Park Phase 4</p>
                                     <p>11900 Bayan Lepas</p>
                                     <p>Penang, Malaysia</p>
                                 </div>
