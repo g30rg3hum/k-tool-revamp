@@ -28,7 +28,7 @@ const serif = Montagu_Slab({
     subsets: ["latin"],
 });
 
-const title = "K-Tool Engineering | Precision Engineering Malaysia";
+const title = "K-Tool Engineering | Precision Engineering in Malaysia";
 const description =
     "Precision engineering firm providing high-quality tooling solutions for various industries across the globe. Headquartered in Malaysia, we serve clients worldwide.";
 export const metadata: Metadata = {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 const structuredData: WithContext<Organization> = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "K-Tool Engineering | Precision Engineering Malaysia",
+    name: "K-Tool Engineering | Precision Engineering in Malaysia",
     description: description,
     url: "https://ktoolengineering.com",
     logo: "https://ktoolengineering.com/images/logo.png",

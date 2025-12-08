@@ -17,12 +17,14 @@ import {
     ChevronsLeft,
     ChevronsRight,
 } from "lucide-react";
+import FadeOnScroll from "@/components/animations/fade-on-scroll";
+import { animationDuration, movementAmount } from "@/lib/constants/animations";
 
 const schema = yup.object({
     search: yup.string(),
 });
 
-const MAX_PER_PAGE = 3;
+const MAX_PER_PAGE = 6;
 
 export default function BlogPosts() {
     const { register, watch } = useForm({ resolver: yupResolver(schema) });
@@ -88,12 +90,15 @@ export default function BlogPosts() {
     return (
         <div className="space-y-9">
             {/* Search */}
-            <Input
-                label="Search"
-                placeholder="Latest machinery in precision engineering"
-                {...register("search")}
-                className="bg-white"
-            />
+            <FadeOnScroll>
+                <Input
+                    label="Search"
+                    placeholder="Latest machinery in precision engineering"
+                    {...register("search")}
+                    className="bg-white"
+                />
+            </FadeOnScroll>
+
             {/* Posts */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {paginatedPosts ? (
@@ -104,6 +109,24 @@ export default function BlogPosts() {
 
                         return (
                             <motion.a
+                                initial={{
+                                    opacity: 0,
+                                    y: movementAmount,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        duration: animationDuration,
+                                        ease: "easeOut",
+                                    },
+                                }}
+                                viewport={{
+                                    once: true,
+                                }}
+                                style={{
+                                    willChange: "transform, opacity",
+                                }}
                                 whileHover={{ y: -3 }}
                                 key={post._id}
                                 href={`/blog/${post.slug!.current}`}

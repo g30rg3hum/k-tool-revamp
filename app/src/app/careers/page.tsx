@@ -86,7 +86,7 @@ const hiring = [
 ];
 
 export const metadata: Metadata = {
-    title: "Careers | K-Tool Engineering | Precision Engineering Malaysia",
+    title: "Careers | K-Tool Engineering | Precision Engineering in Malaysia",
     description:
         "Explore key career opportunities at K-Tool Engineering and join our team of skilled precision engineering professionals in our headquarters in Malaysia and across the globe.",
 };

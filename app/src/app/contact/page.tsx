@@ -7,7 +7,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact Us | K-Tool Engineering | Precision Engineering Malaysia",
+    title: "Contact Us | K-Tool Engineering | Precision Engineering in Malaysia",
     description:
         "Get in touch with K-Tool Engineering (in person at our headquarters in Malaysia or online) for inquiries about our precision engineering services, quotes, or general questions. We're here to help!",
 };

@@ -11,50 +11,53 @@ import { Eye, LineSquiggle } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Work | K-Tool Engineering | Precision Engineering Malaysia",
-  description:
-    "Explore our example work pieces and discover what kind of precision engineering solutions and services K-Tool Engineering offers. Based in Malaysia, we serve clients worldwide with top-quality results.",
+    title: "Work | K-Tool Engineering | Precision Engineering in Malaysia",
+    description:
+        "Explore our example work pieces and discover what kind of precision engineering solutions and services K-Tool Engineering offers. Based in Malaysia, we serve clients worldwide with top-quality results.",
 };
 export default function WorkPage() {
-  return (
-    <div className={SPACE_BETWEEN_SECTIONS}>
-      {/* Overview */}
-      <div className={CONTENT_LAYOUT}>
-        <FadeOnScroll className="mb-6">
-          <SectionLabel className="mb-3" icon={Eye}>
-            Overview
-          </SectionLabel>
-          <SectionHeading className="mb-6">
-            Ready for <span className="text-primary">any challenge.</span>
-          </SectionHeading>
-          <p>
-            With state-of-the-art{" "}
-            <Hyperlink href="/equipment">equipment</Hyperlink>, we are able to
-            offer a wide range of expertise to tackle any complex project with
-            the utmost precision and efficiency.
-          </p>
-        </FadeOnScroll>
-        <FadeOnScroll>
-          <ExpertiseCarousel />
-        </FadeOnScroll>
-      </div>
+    return (
+        <div className={SPACE_BETWEEN_SECTIONS}>
+            {/* Overview */}
+            <div className={CONTENT_LAYOUT}>
+                <FadeOnScroll className="mb-6">
+                    <SectionLabel className="mb-3" icon={Eye}>
+                        Overview
+                    </SectionLabel>
+                    <SectionHeading className="mb-6">
+                        Ready for{" "}
+                        <span className="text-primary">any challenge.</span>
+                    </SectionHeading>
+                    <p>
+                        With state-of-the-art{" "}
+                        <Hyperlink href="/equipment">equipment</Hyperlink>, we
+                        are able to offer a wide range of expertise to tackle
+                        any complex project with the utmost precision and
+                        efficiency.
+                    </p>
+                </FadeOnScroll>
+                <FadeOnScroll>
+                    <ExpertiseCarousel />
+                </FadeOnScroll>
+            </div>
 
-      <div className={CONTENT_LAYOUT}>
-        <FadeOnScroll className="mb-6">
-          <SectionLabel className="mb-3" icon={LineSquiggle}>
-            Process
-          </SectionLabel>
-          <SectionHeading>
-            We&apos;ve got you <span className="text-primary">covered</span>,
-            from <span className="text-primary">beginning to end.</span>
-          </SectionHeading>
-        </FadeOnScroll>
-        <Process />
-      </div>
+            <div className={CONTENT_LAYOUT}>
+                <FadeOnScroll className="mb-6">
+                    <SectionLabel className="mb-3" icon={LineSquiggle}>
+                        Process
+                    </SectionLabel>
+                    <SectionHeading>
+                        We&apos;ve got you{" "}
+                        <span className="text-primary">covered</span>, from{" "}
+                        <span className="text-primary">beginning to end.</span>
+                    </SectionHeading>
+                </FadeOnScroll>
+                <Process />
+            </div>
 
-      <SpecificExamples />
+            <SpecificExamples />
 
-      <GeneralContact />
-    </div>
-  );
+            <GeneralContact />
+        </div>
+    );
 }
