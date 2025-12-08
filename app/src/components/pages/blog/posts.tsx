@@ -131,7 +131,7 @@ export default function BlogPosts() {
                                 key={post._id}
                                 href={`/blog/${post.slug!.current}`}
                                 className={clsx(
-                                    "h-[25rem] sm:h-[30rem] md:h-[27rem] w-full bg-white rounded-md flex flex-col border border-neutral overflow-hidden cursor-pointer"
+                                    "min-h-[25rem] sm:min-h-[30rem] md:min-h-[27rem] w-full bg-white rounded-md flex flex-col border border-neutral overflow-hidden cursor-pointer"
                                 )}
                             >
                                 <img
@@ -148,7 +148,10 @@ export default function BlogPosts() {
                                             post.publishedAt!
                                         ).toLocaleDateString()}
                                     </p>
-                                    <p>{truncate(post.description!, 100)}</p>
+                                    <p>
+                                        testing testing testing testing testing
+                                        testing testing testing testing
+                                    </p>
                                 </div>
                             </motion.a>
                         );

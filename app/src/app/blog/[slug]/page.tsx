@@ -95,7 +95,7 @@ export default async function PostPage({
                             <img
                                 src={mainImageUrl}
                                 alt={post.mainImage!.alt}
-                                className="rounded-md mb-2 w-full h-max sm:max-w-lg "
+                                className="rounded-md mb-2 w-full sm:max-w-lg "
                             />
                             <p className="text-muted text-sm text-center">
                                 {post.mainImage!.caption}
