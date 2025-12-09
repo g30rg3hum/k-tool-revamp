@@ -148,10 +148,7 @@ export default function BlogPosts() {
                                             post.publishedAt!
                                         ).toLocaleDateString()}
                                     </p>
-                                    <p>
-                                        testing testing testing testing testing
-                                        testing testing testing testing
-                                    </p>
+                                    <p>{truncate(post.description!, 100)}</p>
                                 </div>
                             </motion.a>
                         );
