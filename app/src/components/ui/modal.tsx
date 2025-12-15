@@ -108,7 +108,7 @@ export default function Modal({
                                 <button
                                     onClick={onClose}
                                     className={clsx(
-                                        "text-foreground/60 hover:text-foreground transition-colors",
+                                        "text-foreground/60 hover:text-foreground transition-colors self-start",
                                         !title && "ml-auto"
                                     )}
                                     aria-label="Close modal"
