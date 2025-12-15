@@ -12,7 +12,7 @@ import { SanityDocument } from "next-sanity";
 const POSTS_QUERY = `*[
   _type == "post"
  && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt}`;
+]|order(publishedAt desc){_id, title, slug, publishedAt}`;
 
 const options = { next: { revalidate: 30 } };
 

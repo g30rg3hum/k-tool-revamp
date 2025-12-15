@@ -23,7 +23,7 @@ const options = { next: { revalidate: 30 } };
 // type of body blocks
 type BodyBlock = NonNullable<Post["body"]>[number];
 
-type TextBlock = Extract<BodyBlock, { _type: "block" }>;
+export type TextBlock = Extract<BodyBlock, { _type: "block" }>;
 type ImageBlock = Extract<BodyBlock, { _type: "image" }>;
 
 export async function generateMetadata({

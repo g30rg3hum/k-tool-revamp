@@ -3,13 +3,22 @@ import ContentHeading from "@/components/layout/section/content/content-heading"
 import SectionHeading from "@/components/layout/section/section-heading";
 import SectionLabel from "@/components/layout/section/section-label";
 import AvailablePositionsButton from "@/components/pages/careers/available-positions-button";
+import Job from "@/components/pages/careers/job";
 import Construction from "@/components/pages/reusables/construction";
 import GeneralContact from "@/components/pages/sections/general-contact";
 import Hyperlink from "@/components/ui/hyperlink";
+import { client } from "@/lib/clients/sanity";
 import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/lib/constants/styles";
 import clsx from "clsx";
-import { BookOpen, Briefcase, Rose, SquareArrowOutUpRight } from "lucide-react";
+import {
+    BookOpen,
+    Briefcase,
+    Info,
+    Rose,
+    SquareArrowOutUpRight,
+} from "lucide-react";
 import { Metadata } from "next";
+import { SanityDocument } from "next-sanity";
 import Image from "next/image";
 
 const gridImages = [
@@ -64,33 +73,41 @@ const values = [
     },
 ];
 
-const hiring = [
-    {
-        title: "CNC Milling Machinist",
-        description:
-            "Set up, operate and maintain CNC mills to produce precision parts.",
-        url: "https://malaysia.indeed.com/job/cnc-milling-machinist-5f572ade44170321",
-    },
-    {
-        title: "Grinding Machinist",
-        description:
-            "Set up and operate surface grinding machines to produce precision components.",
-        url: "https://malaysia.indeed.com/job/grinding-machinist-f9bb9da9bfea23fe",
-    },
-    {
-        title: "Profile Grinder Machinist",
-        description:
-            "Set up and operate profile grinding machines to manufacture precision parts according to drawings and specifications.",
-        url: "https://malaysia.indeed.com/job/profile-grinder-machinist-a4736cdf92dbd92f",
-    },
-];
+const JOBS_QUERY = `*[
+  _type == "job"
+]`;
+
+const options = { next: { revalidate: 30 } };
+
+// const hiring = [
+//     {
+//         title: "CNC Milling Machinist",
+//         description:
+//             "Set up, operate and maintain CNC mills to produce precision parts.",
+//         url: "https://malaysia.indeed.com/job/cnc-milling-machinist-5f572ade44170321",
+//     },
+//     {
+//         title: "Grinding Machinist",
+//         description:
+//             "Set up and operate surface grinding machines to produce precision components.",
+//         url: "https://malaysia.indeed.com/job/grinding-machinist-f9bb9da9bfea23fe",
+//     },
+//     {
+//         title: "Profile Grinder Machinist",
+//         description:
+//             "Set up and operate profile grinding machines to manufacture precision parts according to drawings and specifications.",
+//         url: "https://malaysia.indeed.com/job/profile-grinder-machinist-a4736cdf92dbd92f",
+//     },
+// ];
 
 export const metadata: Metadata = {
     title: "Careers | K-Tool Engineering | Precision Engineering in Malaysia",
     description:
         "Explore key career opportunities at K-Tool Engineering and join our team of skilled precision engineering professionals in our headquarters in Malaysia and across the globe.",
 };
-export default function CareersPage() {
+export default async function CareersPage() {
+    const jobs = await client.fetch<SanityDocument[]>(JOBS_QUERY, {}, options);
+
     return (
         <div className={SPACE_BETWEEN_SECTIONS}>
             <div className={CONTENT_LAYOUT}>
@@ -167,11 +184,11 @@ export default function CareersPage() {
             </div>
 
             <FadeOnScroll className={CONTENT_LAYOUT} id="available-positions">
-                <div>
+                <div className="mb-6">
                     <SectionLabel className="mb-3" icon={BookOpen}>
                         Available positions
                     </SectionLabel>
-                    <SectionHeading className="mb-6">
+                    <SectionHeading>
                         We are currently{" "}
                         <span className="text-primary">hiring for...</span>
                     </SectionHeading>
@@ -179,26 +196,24 @@ export default function CareersPage() {
 
                 <div className="flex flex-col md:flex-row gap-6 md:gap-9 justify-between">
                     <div className="flex flex-col md:w-[70%]">
-                        {hiring.length === 0 && (
+                        {jobs.length === 0 && (
                             <p>No positions are open at the moment.</p>
                         )}
-                        {hiring.length !== 0 &&
-                            hiring.map((position) => (
+                        {jobs.length !== 0 &&
+                            jobs.map((position) => (
                                 <div key={position.title} className="mb-6">
-                                    <ContentHeading>
-                                        {position.title}{" "}
-                                        <Hyperlink out href={position.url}>
-                                            <SquareArrowOutUpRight
-                                                className="inline-block ml-1"
-                                                size={20}
-                                            />
-                                        </Hyperlink>
-                                    </ContentHeading>
-                                    <p>{position.description}</p>
+                                    <Job {...position} />
                                 </div>
                             ))}
+
+                        <p>
+                            Email your application with your CV to{" "}
+                            <span className="text-primary">
+                                inquiry@ktoolengineering.com.
+                            </span>
+                        </p>
                     </div>
-                    {hiring.length !== 0 && (
+                    {jobs.length !== 0 && (
                         <Image
                             src="/images/stock/careers/6.jpg"
                             alt="Hiring image"
