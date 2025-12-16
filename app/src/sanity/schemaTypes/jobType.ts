@@ -14,7 +14,6 @@ export const jobType = defineType({
             name: "salary",
             type: "number",
             description: "in MYR, thousands",
-            validation: (rule) => rule.required(),
         }),
         defineField({
             name: "description",

@@ -38,7 +38,11 @@ export default function Job({
                 isOpen={isOpen}
                 onClose={() => setIsOpen(false)}
                 title={title}
-                description={`${location} • ${jobType} • MYR ${salary}`}
+                description={
+                    salary
+                        ? `${location} • ${jobType} • MYR ${salary}`
+                        : `${location} • ${jobType}`
+                }
                 size="lg"
                 link={additionalLink}
             >
