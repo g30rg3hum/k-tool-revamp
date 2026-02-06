@@ -50,5 +50,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.6,
     },
+    {
+      url: "https://ktoolengineering.com/blog",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    }
   ];
 }
