@@ -4,17 +4,8 @@ import SectionLabel from "@/components/layout/section/section-label";
 import BlogPosts from "@/components/pages/blog/posts";
 import GeneralContact from "@/components/pages/sections/general-contact";
 import { CONTENT_LAYOUT, SPACE_BETWEEN_SECTIONS } from "@/lib/constants/styles";
-import { client } from "@/sanity/lib/client";
 import { BookText } from "lucide-react";
 import { Metadata } from "next";
-import { SanityDocument } from "next-sanity";
-
-const POSTS_QUERY = `*[
-  _type == "post"
- && defined(slug.current)
-]|order(publishedAt desc){_id, title, slug, publishedAt}`;
-
-const options = { next: { revalidate: 30 } };
 
 export const metadata: Metadata = {
     title: "Blog | K-Tool Engineering | Precision Engineering in Malaysia",
@@ -23,11 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogPage() {
-    const posts = await client.fetch<SanityDocument[]>(
-        POSTS_QUERY,
-        {},
-        options
-    );
 
     return (
         <div className={SPACE_BETWEEN_SECTIONS}>

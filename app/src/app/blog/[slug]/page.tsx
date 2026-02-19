@@ -9,6 +9,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { PortableText, SanityDocument } from "next-sanity";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
 
@@ -31,11 +32,13 @@ export async function generateMetadata({
 }: {
     params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-    const post = await client.fetch<SanityDocument>(
+    const post = await client.fetch<SanityDocument | null>(
         POST_QUERY,
         await params,
         options
     );
+
+    if (!post) return {};
 
     const ogImage = post.mainImage
         ? urlFor(post.mainImage)?.width(1200).height(630).url()
@@ -66,11 +69,14 @@ export default async function PostPage({
 }: {
     params: Promise<{ slug: string }>;
 }) {
-    const post = await client.fetch<SanityDocument>(
+    const post = await client.fetch<SanityDocument | null>(
         POST_QUERY,
         await params,
         options
     );
+
+    if (!post) notFound();
+
     const mainImageUrl = post.mainImage ? urlFor(post.mainImage)?.url() : null;
 
     return (
