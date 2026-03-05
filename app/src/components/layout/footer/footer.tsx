@@ -11,7 +11,7 @@ export default function Footer() {
         <div
           className={clsx(
             "pt-15 sm:pt-18", // modified VERTICAL_PADDING
-            CONTENT_LAYOUT
+            CONTENT_LAYOUT,
           )}
         >
           <div className="flex flex-col overflow-hidden">
@@ -46,12 +46,12 @@ export default function Footer() {
             </div>
             <p className="mb-12 md:hidden">
               {" "}
-              © 2025 K-Tool Engineering. All rights reserved. <br /> Company No:
+              © 2025 K-TOOL Engineering. All rights reserved. <br /> Company No:
               199501021996
             </p>
             <div className="flex justify-end md:justify-between items-end">
               <p className="pb-4 hidden md:block">
-                © 2025 K-Tool Engineering Sdn Bhd.
+                © 2025 K-TOOL Engineering Sdn Bhd.
                 <br /> All rights reserved. <br /> Company No: 199501021996
               </p>
               <h1 className="self-end bottom-0 right-0 text-[5rem] sm:text-[6rem] lg:text-[9rem] leading-none font-logo m-0 p-0 opacity-20">
