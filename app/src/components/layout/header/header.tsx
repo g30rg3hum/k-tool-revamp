@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Button from "../../ui/button";
 import DesktopLinkListItem from "./desktop-link-list-item";
 import MobileMenu from "./mobile-menu";
-import { CONTENT_LAYOUT, VERTICAL_PADDING } from "@/lib/constants/styles";
+import { CONTENT_LAYOUT } from "@/lib/constants/styles";
 import { mainPages } from "@/lib/constants/nav";
 import FadeOnScroll from "@/components/animations/fade-on-scroll";
 import { useEffect, useState } from "react";
@@ -33,37 +33,17 @@ export default function Header() {
         hasScrolled && "border-b border-neutral"
       )}
     >
+      {/* Top row: Logo + CTA buttons (+ mobile menu) */}
       <div
         className={clsx(
-          "flex justify-between items-center",
-          VERTICAL_PADDING,
+          "flex justify-between items-center pt-12 pb-3 lg:pb-0",
           CONTENT_LAYOUT
         )}
       >
         <FadeOnScroll direction="down">
           <div className="flex flex-col">
             <h1 className="font-logo text-4xl text-primary">K-TOOL</h1>
-            {/* <p className="text-muted text-xs">199501021996</p> */}
           </div>
-        </FadeOnScroll>
-
-        {/* Desktop navigation */}
-        <FadeOnScroll direction="down">
-          <nav className="hidden lg:block">
-            <ul className="font-bold grid grid-cols-8 grid-rows-2 justify-items-center xl:flex gap-2 xl:gap-6">
-              {mainPages.map((page) => {
-                return (
-                  <DesktopLinkListItem
-                    key={`desktop:${page.href}`}
-                    href={page.href}
-                    className="col-[span_2]"
-                  >
-                    {page.title}
-                  </DesktopLinkListItem>
-                );
-              })}
-            </ul>
-          </nav>
         </FadeOnScroll>
 
         <FadeOnScroll direction="down">
@@ -82,6 +62,26 @@ export default function Header() {
           <MobileMenu />
         </div>
       </div>
+
+      {/* Bottom row: Navigation links (desktop only) */}
+      <FadeOnScroll direction="down">
+        <nav
+          className={clsx("hidden lg:block pb-6", CONTENT_LAYOUT)}
+        >
+          <ul className="font-bold flex items-center gap-6">
+            {mainPages.map((page) => {
+              return (
+                <DesktopLinkListItem
+                  key={`desktop:${page.href}`}
+                  href={page.href}
+                >
+                  {page.title}
+                </DesktopLinkListItem>
+              );
+            })}
+          </ul>
+        </nav>
+      </FadeOnScroll>
     </header>
   );
 }
