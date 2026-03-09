@@ -51,12 +51,12 @@ export default function Header() {
         <FadeOnScroll direction="down">
           <nav className="hidden lg:block">
             <ul className="font-bold grid grid-cols-8 grid-rows-2 justify-items-center xl:flex gap-2 xl:gap-6">
-              {mainPages.map((page, idx) => {
+              {mainPages.map((page) => {
                 return (
                   <DesktopLinkListItem
                     key={`desktop:${page.href}`}
                     href={page.href}
-                    className={idx === 4 ? "col-[2_/span_2]" : "col-[span_2]"}
+                    className="col-[span_2]"
                   >
                     {page.title}
                   </DesktopLinkListItem>
