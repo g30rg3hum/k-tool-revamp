@@ -34,7 +34,7 @@ const commitments = [
     icon: Zap,
     title: "Energy efficiency",
     description:
-      "Our state-of-the-art 50,000 sq ft facility has been designed with energy efficiency in mind. We invest in modern, energy-efficient CNC machinery and optimise production schedules to reduce idle machine time. LED lighting, efficient climate control systems, and smart power management help us minimise our energy footprint.",
+      "Our state-of-the-art 50,000 sq ft facility has been designed with energy efficiency in mind. We invest in modern, energy-efficient solar power and optimise production schedules to reduce idle machine time. LED lighting, efficient climate control systems, and smart power management help us minimise our energy footprint.",
   },
   {
     icon: Droplets,
@@ -77,8 +77,8 @@ export default function SustainabilityPage() {
                 At K-TOOL Engineering, we believe that manufacturing excellence
                 and environmental stewardship go hand in hand. As a precision
                 engineering firm with over 30 years of experience, we recognise
-                our responsibility to operate sustainably and minimise our impact
-                on the environment.
+                our responsibility to operate sustainably and minimise our
+                impact on the environment.
               </p>
               <p>
                 From responsible material sourcing to energy-efficient
