@@ -139,7 +139,15 @@ export default async function PostPage({
                 if (bullet) {
                   return (
                     <li key={part._key} className="list-inside mt-6">
-                      {text}
+                      {part.children!.map((child: any) =>
+                        child.marks?.includes("strong") ? (
+                          <strong key={child._key}>{child.text}</strong>
+                        ) : child.marks?.includes("em") ? (
+                          <em key={child._key}>{child.text}</em>
+                        ) : (
+                          <span key={child._key}>{child.text}</span>
+                        ),
+                      )}
                     </li>
                   );
                 }
