@@ -5,14 +5,14 @@ import { MoveLeft, MoveRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
-const images = ["/images/main/home_main2.png", "/images/main/home1.png"];
+const images = ["/images/main/home_main2.jpg", "/images/main/home1.jpg"];
 
 type Direction = "left" | "right";
 export default function HeroCarousel() {
   const [currentImage, setCurrentImage] = useState(1);
   const [direction, setDirection] = useState<Direction>("right");
   const [timerKey, setTimerKey] = useState(0);
-  const maxImages = 3;
+  const maxImages = 2;
 
   const buttonVariants = {
     initial: { opacity: 0.3 },
