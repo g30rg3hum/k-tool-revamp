@@ -8,7 +8,7 @@ export const technicalExpertisePoints = [
     title: "Profile Grinding",
     description:
       "Micron-level accuracy and fine surface finishes for complex parts like punches and dies. We recommend this when CNC or wire cutting isn't enough.",
-    image: "1.jpg",
+    image: "/images/main/home_profilegrinding.jpg",
   },
   {
     title: "CNC Machining",
@@ -32,7 +32,7 @@ export const technicalExpertisePoints = [
     title: "Sinker EDM",
     description:
       "High-precision spark erosion for detailed cavities, fine details, and hardened materials used in advanced tooling and mold applications.",
-    image: "5.jpg",
+    image: "/images/main/home_sinkeredm.jpg",
   },
   {
     title: "Wire Cutting",
@@ -44,7 +44,7 @@ export const technicalExpertisePoints = [
     title: "Steel and Carbide Grinding",
     description:
       "Expert grinding of steel and carbide to tight tolerances, ensuring high-dimensional accuracy and durability for demanding tooling needs.",
-    image: "7.jpg",
+    image: "/images/main/home_steelcarbidegrinding.jpg",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function TechnicalExpertiseCarousel() {
           key={point.title}
           whileHover={{ y: -3 }}
           className={clsx(
-            "h-[25rem] w-xs bg-white rounded-md shrink-0 flex flex-col justify-between border border-neutral"
+            "h-[25rem] w-xs bg-white rounded-md shrink-0 flex flex-col justify-between border border-neutral",
           )}
         >
           <div className="p-6">
@@ -70,7 +70,7 @@ export default function TechnicalExpertiseCarousel() {
           <div
             className="rounded-md bg-center bg-cover h-[43%] m-3"
             style={{
-              backgroundImage: `url('/images/stock/home/technical-expertise/${point.image}')`,
+              backgroundImage: `url('${point.image.startsWith("/") ? point.image : `/images/stock/home/technical-expertise/${point.image}`}')`,
             }}
           />
         </motion.div>

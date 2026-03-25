@@ -80,7 +80,7 @@ const content = [
         to learn more.
       </>,
     ],
-    image: "/images/stock/quality-assurance/4.jpg",
+    image: "/images/main/quality_backedbyadvance.jpg",
   },
 ];
 

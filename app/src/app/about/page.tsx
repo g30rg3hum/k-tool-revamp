@@ -41,7 +41,7 @@ export default function AboutPage() {
             </p>
           </div>
           <Image
-            src="/images/stock/about/overview/1.png"
+            src="/images/main/home_main.png"
             width={1000}
             height={0}
             alt="Company image"
