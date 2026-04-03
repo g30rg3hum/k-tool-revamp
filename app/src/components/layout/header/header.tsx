@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import Link from "next/link";
 import Button from "../../ui/button";
 import DesktopLinkListItem from "./desktop-link-list-item";
 import MobileMenu from "./mobile-menu";
@@ -41,9 +42,9 @@ export default function Header() {
         )}
       >
         <FadeOnScroll direction="down">
-          <div className="flex flex-col">
+          <Link href="/">
             <h1 className="font-logo text-4xl text-primary">K-TOOL</h1>
-          </div>
+          </Link>
         </FadeOnScroll>
 
         <FadeOnScroll direction="down">
