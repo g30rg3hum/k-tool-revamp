@@ -68,9 +68,10 @@ export default async function PostPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const post = await client.fetch<SanityDocument | null>(
     POST_QUERY,
-    await params,
+    { slug },
     options,
   );
 
@@ -78,14 +79,46 @@ export default async function PostPage({
 
   const mainImageUrl = post.mainImage ? urlFor(post.mainImage)?.url() : null;
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    image: post.mainImage ? urlFor(post.mainImage)?.width(1200).height(630).url() : undefined,
+    author: {
+      "@type": "Organization",
+      name: "K-TOOL Engineering",
+      url: "https://www.ktoolengineering.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "K-TOOL Engineering",
+      url: "https://www.ktoolengineering.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.ktoolengineering.com/images/logo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.ktoolengineering.com/blog/${slug}`,
+    },
+  };
+
   return (
     <article className={SPACE_BETWEEN_SECTIONS}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <FadeOnScroll className={CONTENT_LAYOUT}>
         <a href="/blog" className="hover:underline block mb-6">
           ← Back to posts
         </a>
         <header className="mb-9">
-          <SectionHeading className="mb-1">{post.title}</SectionHeading>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1">{post.title}</h1>
           <h3 className="text-muted">{post.description}</h3>
           <time dateTime={post.publishedAt}>
             Published on {new Date(post.publishedAt!).toLocaleDateString()}
