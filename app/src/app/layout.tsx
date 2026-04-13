@@ -32,14 +32,14 @@ const title = "K-TOOL Engineering | Precision Engineering in Malaysia";
 const description =
   "Precision engineering firm providing high-quality tooling solutions for various industries across the globe. Headquartered in Malaysia, we serve clients worldwide.";
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ktoolengineering.com"),
+  metadataBase: new URL("https://www.ktoolengineering.com"),
   title,
   description,
   openGraph: {
     title,
     description,
     images: ["/images/social-banner.png"],
-    url: "https://ktoolengineering.com",
+    url: "https://www.ktoolengineering.com",
     type: "website",
   },
   twitter: {
@@ -55,8 +55,8 @@ const structuredData: WithContext<Organization> = {
   "@type": "LocalBusiness",
   name: "K-TOOL Engineering | Precision Engineering in Malaysia",
   description: description,
-  url: "https://ktoolengineering.com",
-  logo: "https://ktoolengineering.com/images/logo.png",
+  url: "https://www.ktoolengineering.com",
+  logo: "https://www.ktoolengineering.com/images/logo.png",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer service",
