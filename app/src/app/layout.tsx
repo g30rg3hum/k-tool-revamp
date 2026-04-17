@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.ktoolengineering.com"),
   title,
   description,
+  alternates: {
+    canonical: "https://www.ktoolengineering.com",
+  },
   openGraph: {
     title,
     description,
